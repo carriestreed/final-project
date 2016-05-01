@@ -1,5 +1,3 @@
-import Main from './App/Components/Main';
-
 import React, {
   AppRegistry,
   StyleSheet,
@@ -8,6 +6,9 @@ import React, {
   Component,
   NavigatorIOS
 } from 'react-native';
+
+import Main from './App/Components/Main';
+import StatusBarBg from './App/Components/StatusBarBg';
 
 const styles = StyleSheet.create({
   container: {
@@ -19,13 +20,10 @@ const styles = StyleSheet.create({
 class Wander extends Component {
   render() {
     return (
-      <NavigatorIOS
-        style={styles.container}
-        initialRoute={{
-          title: 'Wander',
-          component: Main
-        }}
-      />
+      <View>
+        <StatusBarBg />
+        <Text>Hello</Text>
+      </View>
     );
   }
 }
