@@ -9,12 +9,11 @@ import React, {
   NavigatorIOS
 } from 'react-native';
 
-
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'red',
-    color: '#000'
-  }
+    flex: 1,
+    backgroundColor: 'transparent',
+  },
 });
 
 class Wander extends Component {
