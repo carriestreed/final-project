@@ -13,9 +13,6 @@ const styles = StyleSheet.create({
     mainContainer: {
       flex: 1,
       marginTop: 64,
-      flexDirection: 'column',
-      justifyContent: 'center',
-      backgroundColor: '#48BBEC'
     },
     bgImage: {
       flex: 1,
@@ -26,6 +23,7 @@ const styles = StyleSheet.create({
     title: {
       marginBottom: 20,
       fontSize: 25,
+      textShadowColor: '#000',
       textAlign: 'center',
       color: '#fff'
     },
@@ -34,13 +32,13 @@ const styles = StyleSheet.create({
     },
     searchInput: {
       height: 50,
-      padding: 4,
-      marginRight: 5,
+      padding: 10,
+      margin: 5,
       fontSize: 23,
       borderWidth: 1,
-      borderColor: 'white',
-      borderRadius: 8,
-      color: 'white'
+      borderColor: '#fff',
+      borderRadius: 6,
+      color: '#fff'
     },
     btnText: {
       fontSize: 18,
@@ -50,13 +48,12 @@ const styles = StyleSheet.create({
     submitBtn: {
       height: 45,
       flexDirection: 'row',
-      backgroundColor: 'white',
-      borderColor: 'white',
+      backgroundColor: 'rgba(255,255,255,.5)',
+      borderColor: 'rgba(255,255,255,.3)',
       borderWidth: 1,
-      borderRadius: 8,
-      marginBottom: 10,
+      borderRadius: 6,
       marginTop: 10,
-      alignSelf: 'stretch',
+      margin: 4,
       justifyContent: 'center'
     },
  });

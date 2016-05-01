@@ -24,7 +24,8 @@ class Wander extends Component {
         initialRoute={{
           title: 'Wander',
           component: Main
-        }} />
+        }}
+      />
     );
   }
 }
