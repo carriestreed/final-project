@@ -5,6 +5,7 @@ import React, {
   View,
   Text,
   ListView,
+  StyleSheet,
 } from 'react-native';
 
 import StatusBarBg from '../components/StatusBarBg';
@@ -36,15 +37,29 @@ class PhotoFeedScreen extends Component {
     }
   }
 
+  componentDidMount(){
+    console.log('HELLO from the photo feed screen!!!');
+    console.log('NAV PROPS are', this.props.navigator);
+    console.log('USER is', this.props.username);
+    console.log('PASSWORD is', this.props.password);
+  }
+
   render(){
     return (
-      <ViewContainer>
+      <ViewContainer style={styles.mainContainer}>
         <StatusBarBg />
-        <Text>{`Hi, I'm the photo feed screen`}</Text>
+        <View>
+          <Text>{`Hi, I'm the photo feed screen`}</Text>
+        </View>
       </ViewContainer>
     )
   }
 }
 
+const styles = StyleSheet.create({
+  mainContainer: {
+    backgroundColor: '#fff',
+  }
+})
 
 export default PhotoFeedScreen;

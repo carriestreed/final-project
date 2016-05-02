@@ -8,6 +8,7 @@ import React, {
   StyleSheet,
   Image,
   TextInput,
+  Navigator
 } from 'react-native';
 
 
@@ -35,28 +36,19 @@ class LoginScreen extends Component {
     });
   }
 
-  handleLogin(){
+  _navigateToPhotoFeedScreen(){
     this.setState({
       isLoading: true
     });
-
-    console.log('logging in as', this.state.username);
-    console.log('password is', this.state.password);
-    console.log('should Route to PhotoFeed screen');
-
-    console.log('NAV PROPS', this.props.navigator);
-    this._navigateToPhotoFeed();
-  }
-
-  _navigateToPhotoFeed(){
     this.props.navigator.push({
       goToScreen: 'PhotoFeedScreen',
+      sceneConfig: Navigator.SceneConfigs.FloatFromBottom,
       username: this.state.username,
       password: this.state.password
-    })
+    });
   }
 
-  handleRegister(){
+  _navigateToRegisterScreen(){
     this.setState({
       isLoading: true
     });
@@ -91,7 +83,7 @@ class LoginScreen extends Component {
 
             <TouchableHighlight
               style={styles.submitBtn}
-              onPress={this.handleLogin.bind(this)}
+              onPress={this._navigateToPhotoFeedScreen.bind(this)}
               underlayColor='#fff'>
               <Text style={styles.btnText}>
                 Login
@@ -100,7 +92,7 @@ class LoginScreen extends Component {
 
             <TouchableHighlight
               style={styles.submitBtn}
-              onPress={this.handleRegister.bind(this)}
+              onPress={this._navigateToRegisterScreen.bind(this)}
               underlayColor='#fff'>
               <Text style={styles.btnText}>
                 Register

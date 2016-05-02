@@ -29,6 +29,8 @@ class AppNavigator extends Component {
         return (
           <PhotoFeedScreen
             {...globalNavigatorProps}
+            username={route.username}
+            password={route.password}
           />
         )
 
@@ -48,6 +50,9 @@ class AppNavigator extends Component {
         initialRoute={this.props.initialRoute}
         ref='appNavigator'
         renderScene={this._renderScene}
+        configureScene={(route) => ({
+          ...route.sceneConfig || Navigator.SceneConfigs.FloatFromRight
+        })}
       />
     );
   }

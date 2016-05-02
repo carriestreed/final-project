@@ -8,7 +8,7 @@ import React, {
 class ViewContainer extends Component {
   render(){
     return (
-      <View style={styles.viewContainer}>
+      <View style={[styles.viewContainer, this.props.style || {}]}>
         {this.props.children}
       </View>
     )
