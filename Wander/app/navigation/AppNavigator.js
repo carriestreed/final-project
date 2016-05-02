@@ -48,6 +48,9 @@ class AppNavigator extends Component {
         initialRoute={this.props.initialRoute}
         ref='appNavigator'
         renderScene={this._renderScene}
+        configureScene={(route) => ({
+          ...route.sceneConfig || Navigator.SceneConfigs.FloatFromRight
+        })}
       />
     );
   }
