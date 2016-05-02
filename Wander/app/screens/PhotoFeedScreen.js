@@ -4,6 +4,7 @@ import React, {
   Component,
   View,
   Text,
+  ListView,
 } from 'react-native';
 
 import StatusBarBg from '../components/StatusBarBg';
@@ -35,14 +36,10 @@ class PhotoFeedScreen extends Component {
   }
 
   render(){
-
     return (
       <View>
         <StatusBarBg />
         <Text>{`Hi, I'm the photo feed screen`}</Text>
-        <ListView
-          dataSource={this.state.photoDataSource}
-          renderRow={(photo) => {return this._renderPhotoRow(photo) }} />
       </View>
     )
   }

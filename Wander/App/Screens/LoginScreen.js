@@ -39,9 +39,21 @@ class LoginScreen extends Component {
     this.setState({
       isLoading: true
     });
+
     console.log('logging in as', this.state.username);
     console.log('password is', this.state.password);
     console.log('should Route to PhotoFeed screen');
+
+    console.log('NAV PROPS', this.props.navigator);
+    this._navigateToPhotoFeed();
+  }
+
+  _navigateToPhotoFeed(){
+    this.props.navigator.push({
+      goToScreen: 'PhotoFeedScreen',
+      username: this.state.username,
+      password: this.state.password
+    })
   }
 
   handleRegister(){
