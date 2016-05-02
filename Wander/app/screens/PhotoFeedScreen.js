@@ -9,7 +9,6 @@ import React, {
 import StatusBarBg from '../components/StatusBarBg';
 
 
-
 const testData = [
   {
     id: 1,

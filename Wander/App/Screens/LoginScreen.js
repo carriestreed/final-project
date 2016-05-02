@@ -10,7 +10,6 @@ import React, {
   TextInput,
 } from 'react-native';
 
-import StatusBarBg from '../components/StatusBarBg';
 
 class LoginScreen extends Component {
 
@@ -33,68 +32,71 @@ class LoginScreen extends Component {
   handlePassword(event){
     this.setState({
       password: event.nativeEvent.text,
-    })
+    });
   }
 
-  handleSubmit(){
+  handleLogin(){
     this.setState({
       isLoading: true
     });
-    console.log('logging in as', this.state.username)
-    console.log('password is', this.state.password)
+    console.log('logging in as', this.state.username);
+    console.log('password is', this.state.password);
+    console.log('should Route to PhotoFeed screen');
+  }
+
+  handleRegister(){
+    this.setState({
+      isLoading: true
+    });
+    console.log('should Route to Register screen');
   }
 
   render(){
     return (
-      <View>
-        <StatusBarBg />
-        <Text>{`Hi, I'm the login screen`}</Text>
+      <View style={styles.mainContainer}>
 
-          <View style={styles.mainContainer}>
-            <Image
-              source={require('../images/bolivia.jpg')}
-              style={styles.bgImage} >
+        <Image
+          source={require('../images/bolivia.jpg')}
+          style={styles.bgImage} >
 
-            <View style={styles.formContainer}>    
-              <Text style={styles.logo}>
-                WANDER
+          <View style={styles.formContainer}>
+            <Text style={styles.logo}>
+              WANDER
+            </Text>
+
+            <TextInput
+              placeholder='username'
+              style={styles.formInput}
+              value={this.state.username}
+              onChange={this.handleUsername.bind(this)}
+              />
+            <TextInput
+              placeholder='password'
+              style={styles.formInput}
+              value={this.state.password}
+              onChange={this.handlePassword.bind(this)}
+              />
+
+            <TouchableHighlight
+              style={styles.submitBtn}
+              onPress={this.handleLogin.bind(this)}
+              underlayColor='#fff'>
+              <Text style={styles.btnText}>
+                Login
               </Text>
+            </TouchableHighlight>
 
-              <TextInput
-                placeholder='username'
-                style={styles.formInput}
-                value={this.state.username}
-                onChange={this.handleUsername.bind(this)}
-              />
-              <TextInput
-                placeholder='password'
-                style={styles.formInput}
-                value={this.state.password}
-                onChange={this.handlePassword.bind(this)}
-              />
+            <TouchableHighlight
+              style={styles.submitBtn}
+              onPress={this.handleRegister.bind(this)}
+              underlayColor='#fff'>
+              <Text style={styles.btnText}>
+                Register
+              </Text>
+            </TouchableHighlight>
 
-              <TouchableHighlight
-                style={styles.submitBtn}
-                onPress={this.handleSubmit.bind(this)}
-                underlayColor='#fff'>
-                <Text style={styles.btnText}>
-                  Login
-                </Text>
-              </TouchableHighlight>
-
-              <TouchableHighlight
-                style={styles.submitBtn}
-                onPress={this.handleSubmit.bind(this)}
-                underlayColor='#fff'>
-                <Text style={styles.btnText}>
-                  Register
-                </Text>
-              </TouchableHighlight>
-
-            </View>
-          </Image>
-        </View>
-
+          </View>
+        </Image>
       </View>
     )
   }
@@ -103,7 +105,6 @@ class LoginScreen extends Component {
 const styles = StyleSheet.create({
     mainContainer: {
       flex: 1,
-      marginTop: 64,
     },
     bgImage: {
       flex: 1,
@@ -111,36 +112,42 @@ const styles = StyleSheet.create({
       height: null,
       backgroundColor: 'transparent',
     },
+    formContainer: {
+      marginTop: 140,
+      margin: 20,
+    },
     logo: {
-      marginBottom: 20,
-      fontSize: 25,
-      textShadowColor: '#000',
+      fontFamily: 'NewsCycle-Bold',
+      fontSize: 60,
+      textShadowColor: 'rgba(0,0,0,.5)',
+      textShadowOffset: {width: 1, height: 1},
+      textShadowRadius: 5,
+      marginBottom: 100,
       textAlign: 'center',
       color: '#fff'
     },
-    formContainer: {
-      margin: 20,
-    },
     formInput: {
-      height: 50,
+      fontFamily: 'NewsCycle-Bold',
+      fontSize: 30,
+      height: 60,
       padding: 10,
       margin: 5,
-      fontSize: 23,
-      borderWidth: 1,
-      borderColor: '#fff',
+      borderWidth: 3,
       borderRadius: 6,
-      color: '#fff'
+      borderColor: 'rgba(255, 255, 255,.8)',
+      color: '#2f2f2f'
     },
     btnText: {
-      fontSize: 18,
-      color: '#111',
+      fontFamily: 'NewsCycle-Bold',
+      fontSize: 25,
+      color: '#fff',
       alignSelf: 'center'
     },
     submitBtn: {
-      height: 45,
+      height: 60,
       flexDirection: 'row',
-      backgroundColor: 'rgba(255,255,255,.5)',
-      borderColor: 'rgba(255,255,255,.3)',
+      backgroundColor: 'rgba(102, 200, 255,1)',
+      borderColor: 'rgba(0,0,0,.1)',
       borderWidth: 1,
       borderRadius: 6,
       marginTop: 10,
