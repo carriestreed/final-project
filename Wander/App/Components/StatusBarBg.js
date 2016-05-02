@@ -23,7 +23,7 @@ class StatusBarBg extends Component {
 const styles = StyleSheet.create({
   main: {
     height: 20,
-    backgroundColor: 'lightblue',
+    backgroundColor: 'transparent',
   }
 });
 

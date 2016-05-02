@@ -4,8 +4,10 @@ import React, {
   Navigator,
   Component,
   Text,
+  View,
 } from 'react-native';
 
+import StatusBarBg from '../components/StatusBarBg';
 import LoginScreen from '../screens/LoginScreen';
 import PhotoFeedScreen from '../screens/PhotoFeedScreen';
 
@@ -32,7 +34,10 @@ class AppNavigator extends Component {
 
         default:
         return (
-          <Text>{`somethings not right, yo ${route}`}</Text>
+          <View>
+            <StatusBarBg />
+            <Text>{`somethings not right, yo ${route}`}</Text>
+          </View>
         )
       }
     }
