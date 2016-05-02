@@ -11,15 +11,15 @@ import React, {
   ActivityIndicatorIOS,
 } from 'react-native';
 
-class LoginScreen extends Component {
+class PhotoFeedScreen extends Component {
   render(){
     return (
       <View>
-        <Text>{`Hi, I'm the login screen`}</Text>
+        <Text>{`Hi, I'm the photo feed screen`}</Text>
       </View>
     )
   }
 }
 
 
-export default LoginScreen;
+export default PhotoFeedScreen;

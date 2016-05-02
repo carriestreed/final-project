@@ -1,22 +1,19 @@
+'use strict'
+
 import React, {
   AppRegistry,
   Text,
-  View,
   Component,
-  NavigatorIOS
 } from 'react-native';
 
-import StatusBarBg from './App/Components/StatusBarBg';
-import LoginScreen from './App/Screens/LoginScreen';
-
+import AppNavigator from './app/navigation/AppNavigator'
 
 class Wander extends Component {
   render() {
     return (
-      <View>
-        <StatusBarBg />
-        <LoginScreen />
-      </View>
+      <AppNavigator
+        initialRoute={{indent: "LoginScreen"}}
+      />
     );
   }
 }
