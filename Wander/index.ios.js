@@ -12,7 +12,7 @@ class Wander extends Component {
   render() {
     return (
       <AppNavigator
-        initialRoute={{indent: "LoginScreen"}}
+        initialRoute={{goToScreen: 'LoginScreen'}}
       />
     );
   }
