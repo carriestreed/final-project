@@ -17,8 +17,8 @@ class LoginScreen extends Component {
   constructor(props){
     super(props);
     this.state = {
-      username: '',
-      password: '',
+      username: 'Carrie',
+      password: 'Testing',
       isLoading: false,
       error: false
     }
@@ -41,7 +41,7 @@ class LoginScreen extends Component {
       isLoading: true
     });
     this.props.navigator.push({
-      goToScreen: 'PhotoFeedScreen',
+      goToScreen: 'HomepageScreen',
       sceneConfig: Navigator.SceneConfigs.FloatFromBottom,
       username: this.state.username,
       password: this.state.password
@@ -60,7 +60,7 @@ class LoginScreen extends Component {
       <View style={styles.mainContainer}>
 
         <Image
-          source={require('../images/bolivia.jpg')}
+          source={require('../images/yosemite2.jpg')}
           style={styles.bgImage} >
 
           <View style={styles.formContainer}>
@@ -114,10 +114,10 @@ const styles = StyleSheet.create({
       flex: 1,
       width: null,
       height: null,
-      backgroundColor: 'transparent',
+      resizeMode: 'cover',
     },
     formContainer: {
-      marginTop: 140,
+      marginTop: 120,
       margin: 20,
     },
     logo: {
@@ -128,29 +128,30 @@ const styles = StyleSheet.create({
       textShadowRadius: 5,
       marginBottom: 100,
       textAlign: 'center',
-      color: '#fff'
+      color: 'rgba(255,255,255,.9)'
     },
     formInput: {
       fontFamily: 'NewsCycle-Bold',
-      fontSize: 30,
-      height: 60,
+      fontSize: 25,
+      height: 50,
       padding: 10,
       margin: 5,
-      borderWidth: 3,
+      borderWidth: 1,
       borderRadius: 6,
-      borderColor: 'rgba(255, 255, 255,.8)',
-      color: '#2f2f2f'
+      borderColor: 'rgba(255,255,255,.3)',
+      backgroundColor: 'rgba(0,0,0, 0.3)',
+      color: 'rgba(255,255,255,.7)'
     },
     btnText: {
       fontFamily: 'NewsCycle-Bold',
       fontSize: 25,
-      color: '#fff',
+      color: 'rgba(255, 255, 255, .7)',
       alignSelf: 'center'
     },
     submitBtn: {
-      height: 60,
+      height: 50,
       flexDirection: 'row',
-      backgroundColor: 'rgba(102, 200, 255,1)',
+      backgroundColor: 'rgba(8, 47, 66, 0.9)',
       borderColor: 'rgba(0,0,0,.1)',
       borderWidth: 1,
       borderRadius: 6,

@@ -9,7 +9,7 @@ import React, {
 class StatusBarBg extends Component {
   render(){
     return (
-      <View style={styles.main}>
+      <View style={[styles.main, this.props.style || {}]}>
       </View>
     )
   }

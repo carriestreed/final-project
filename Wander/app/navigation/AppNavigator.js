@@ -9,6 +9,7 @@ import React, {
 
 import StatusBarBg from '../components/StatusBarBg';
 import LoginScreen from '../screens/LoginScreen';
+import HomepageScreen from '../screens/HomepageScreen';
 import PhotoFeedScreen from '../screens/PhotoFeedScreen';
 
 
@@ -25,12 +26,19 @@ class AppNavigator extends Component {
           />
         )
 
+        case 'HomepageScreen':
+        return (
+          <HomepageScreen
+            {...globalNavigatorProps}
+            username={route.username}
+            password={route.password}
+          />
+        )
+
         case 'PhotoFeedScreen':
         return (
           <PhotoFeedScreen
             {...globalNavigatorProps}
-            username={route.username}
-            password={route.password}
           />
         )
 

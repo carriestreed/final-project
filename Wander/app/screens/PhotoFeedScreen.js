@@ -4,15 +4,17 @@ import React, {
   Component,
   View,
   Text,
-  ListView,
   StyleSheet,
+  Image,
+  ListView,
+  TouchableOpacity,
 } from 'react-native';
 
 import StatusBarBg from '../components/StatusBarBg';
 import ViewContainer from '../components/ViewContainer';
 
 
-const testData = [
+const hpFeaturedData = [
   {
     id: 1,
     url: "https://www.newscientist.com/blogs/shortsharpscience/assets_c/2011/06/00130493-thumb-600x400-128963.jpg",
@@ -26,14 +28,23 @@ const testData = [
   }
 ]
 
+const test = [
+  {firstName: 'carrie', lastname: 'streed', id: 1342 },
+  {firstName: 'josh', lastname: 'dixon', id: 123423 },
+  {firstName: 'krissy', lastname: 'streed', id: 12564 },
+  {firstName: 'desirae', lastname: 'chavez', id: 13456235 },
+  {firstName: 'laura', lastname: 'rico', id: 15234575 },
+]
+
+
 
 class PhotoFeedScreen extends Component {
 
   constructor(props){
     super(props)
-    let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 != r2})
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 != r2})
     this.state = {
-      photoDataSource: ds.cloneWithRows(testData)
+      testDataSource: ds.cloneWithRows(test)
     }
   }
 
@@ -44,22 +55,50 @@ class PhotoFeedScreen extends Component {
     console.log('PASSWORD is', this.props.password);
   }
 
+  _renderPersonRow(testData){
+    return (
+      <View style={styles.personRow}>
+        <Image
+          source={require('../images/bolivia.jpg')}
+        >
+        <Text style={styles.personText}>
+          {testData.firstName}
+        </Text>
+
+
+        </Image>
+
+      </View>
+
+    )
+  }
+
   render(){
     return (
-      <ViewContainer style={styles.mainContainer}>
+      <ViewContainer>
         <StatusBarBg />
-        <View>
-          <Text>{`Hi, I'm the photo feed screen`}</Text>
-        </View>
+        <ListView
+          dataSource={this.state.testDataSource}
+          renderRow={(testData) => {return this._renderPersonRow(testData)}}
+        />
       </ViewContainer>
     )
   }
 }
 
-const styles = StyleSheet.create({
-  mainContainer: {
-    backgroundColor: '#fff',
+const styles=StyleSheet.create({
+  searchBgImage: {
+    flex: 1,
+    width: null,
+    height: null,
+    resizeMode: 'cover',
+  },
+  personRow: {
+    flexDirection: 'column',
+  },
+  personText: {
+    fontSize: 20,
   }
-})
+});
 
 export default PhotoFeedScreen;
