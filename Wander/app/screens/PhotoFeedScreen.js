@@ -8,6 +8,7 @@ import React, {
 } from 'react-native';
 
 import StatusBarBg from '../components/StatusBarBg';
+import ViewContainer from '../components/ViewContainer';
 
 
 const testData = [
@@ -37,10 +38,10 @@ class PhotoFeedScreen extends Component {
 
   render(){
     return (
-      <View>
+      <ViewContainer>
         <StatusBarBg />
         <Text>{`Hi, I'm the photo feed screen`}</Text>
-      </View>
+      </ViewContainer>
     )
   }
 }
