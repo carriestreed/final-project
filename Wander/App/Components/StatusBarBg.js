@@ -1,14 +1,9 @@
 'use strict'
 
 import React, {
-  View,
-  Text,
-  Image,
   Component,
+  View,
   StyleSheet,
-  TextInput,
-  TouchableHighlight,
-  ActivityIndicatorIOS,
 } from 'react-native';
 
 class StatusBarBg extends Component {
