@@ -51,6 +51,8 @@ class AppNavigator extends Component {
       />
     );
   }
-
 }
+
+
+
 export default AppNavigator;

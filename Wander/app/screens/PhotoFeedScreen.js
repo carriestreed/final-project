@@ -47,7 +47,7 @@ class PhotoFeedScreen extends Component {
       </View>
     )
   }
-
-
 }
+
+
 export default PhotoFeedScreen;
