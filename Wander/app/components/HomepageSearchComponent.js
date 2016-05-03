@@ -43,7 +43,7 @@ class HomepageSearchComponent extends Component {
 
         <View style={styles.formContainer}>
           <Text style={styles.title}>
-            Picture yourself, everywhere.
+            {`Picture yourself, everywhere.`}
           </Text>
 
           <TextInput
@@ -83,6 +83,10 @@ const styles=StyleSheet.create({
   },
   formContainer: {
     margin: 20,
+    marginTop: 120,
+    // backgroundColor: 'rgba(0,0,0,.5)',
+    borderRadius: 4,
+    padding: 10,
   },
   title: {
     fontFamily: 'NewsCycle-Bold',
@@ -93,7 +97,6 @@ const styles=StyleSheet.create({
     color: 'white',
     backgroundColor: 'transparent',
     alignSelf: 'center',
-    marginTop: 120,
   },
   searchInput: {
     fontFamily: 'NewsCycle-Bold',
