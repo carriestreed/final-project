@@ -42,8 +42,6 @@ class HomepageSearchComponent extends Component {
       goToScreen: 'PhotoFeedScreen',
       countrySearch: this.state.countrySearch
     });
-    console.log('searching for', this.state.countrySearch)
-
   }
 
   render(){
