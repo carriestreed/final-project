@@ -9,6 +9,7 @@ import React, {
   ListView,
   TouchableOpacity,
   TouchableHighlight,
+  TouchableWithoutFeedback,
   Navigator,
 } from 'react-native';
 
@@ -35,7 +36,6 @@ class PhotoFeedScreen extends Component {
   }
 
   navigateToPhotoInfoScreen(el){
-    console.log('PROPS WORKING???', el)
     this.setState({
       isLoading: 'true',
     });
@@ -49,17 +49,19 @@ class PhotoFeedScreen extends Component {
   renderPhotoRow(photoData){
     return (
       <View style={styles.dataRow}>
-        <TouchableOpacity
+        <TouchableWithoutFeedback
           onPress={(event) => this.navigateToPhotoInfoScreen(photoData)}
           >
-          <Image
-            style={styles.photoRow}
-            source={{uri:photoData.url}}
-            />
-          <Text style={styles.dataText}>
-            {photoData.description}
-          </Text>
-        </TouchableOpacity>
+          <View>
+            <Image
+              style={styles.photoRow}
+              source={{uri:photoData.url}}
+              />
+            <Text style={styles.dataText}>
+              {`Photographer: `}{photoData.author}
+            </Text>
+          </View>
+        </TouchableWithoutFeedback>
       </View>
     )
   }
@@ -86,13 +88,11 @@ const styles=StyleSheet.create({
   photoRow: {
     flex: 1,
     width: null,
-    height: 500,
+    height: 600,
     resizeMode: 'cover',
     marginBottom: 15,
   },
   dataText: {
-    fontSize: 20,
-    marginTop: 5,
     marginBottom: 40,
   }
 });
@@ -100,10 +100,10 @@ const styles=StyleSheet.create({
 
 const photo = [
   {
-    id: 1,
-    url: "https://www.newscientist.com/blogs/shortsharpscience/assets_c/2011/06/00130493-thumb-600x400-128963.jpg",
+    id: 4,
+    url: "http://www.expatliving.sg/incoming/article59374.ece/alternates/w1024/_MG_3110.jpg",
     title: "Salt Flats",
-    description: "Trippin screening phone calls parting your hair down the middle the Truman Show. Dolly the Sheep flip flops Fresh Prince of Bel-Air sideburns gangsta’s paradise, Air Jordans cargo pants Geo Metro incididunt Oakleys. Michael Jordan Spice Girls animated GIFs Sublime frosted tips gettin’ jiggy wit it. Choker necklace Nirvana laborum Kazaa Saved by the Bell. As I lay me down to sleep Roseanne Hush Puppies nylon windbreaker Tommy Hilfiger duis.",
+    description: "Truman Show. Dolly the Sheep flip flops Fresh Prince of Bel-Air sideburns gangsta’s paradise, Air Jordans cargo pants Geo Metro incididunt Oakleys. Michael Jordan Spice Girls animated GIFs Sublime frosted tips gettin’ jiggy wit it. Choker necklace Nirvana laborum Kazaa Saved by the Bell. As I lay me down to sleep Roseanne Hush Puppies nylon windbreaker Tommy Hilfiger duis.",
     author: "Eustace",
     date: "April 9",
     location: "Bolivia",
@@ -133,10 +133,10 @@ const photo = [
     updated_at: "2016-05-01T20:46:15.497Z"
   },
   {
-    id: 4,
-    url: "http://www.expatliving.sg/incoming/article59374.ece/alternates/w1024/_MG_3110.jpg",
+    id: 1,
+    url: "https://www.newscientist.com/blogs/shortsharpscience/assets_c/2011/06/00130493-thumb-600x400-128963.jpg",
     title: "Salt Flats",
-    description: "Truman Show. Dolly the Sheep flip flops Fresh Prince of Bel-Air sideburns gangsta’s paradise, Air Jordans cargo pants Geo Metro incididunt Oakleys. Michael Jordan Spice Girls animated GIFs Sublime frosted tips gettin’ jiggy wit it. Choker necklace Nirvana laborum Kazaa Saved by the Bell. As I lay me down to sleep Roseanne Hush Puppies nylon windbreaker Tommy Hilfiger duis.",
+    description: "Trippin screening phone calls parting your hair down the middle the Truman Show. Dolly the Sheep flip flops Fresh Prince of Bel-Air sideburns gangsta’s paradise, Air Jordans cargo pants Geo Metro incididunt Oakleys. Michael Jordan Spice Girls animated GIFs Sublime frosted tips gettin’ jiggy wit it. Choker necklace Nirvana laborum Kazaa Saved by the Bell. As I lay me down to sleep Roseanne Hush Puppies nylon windbreaker Tommy Hilfiger duis.",
     author: "Eustace",
     date: "April 9",
     location: "Bolivia",
