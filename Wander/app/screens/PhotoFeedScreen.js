@@ -63,7 +63,6 @@ class PhotoFeedScreen extends Component {
   }
 }
 
-
 const styles=StyleSheet.create({
   mainContainer: {
     backgroundColor: '#000',

@@ -15,7 +15,7 @@ class HomepageSearchComponent extends Component {
 
   componentDidMount(){
     console.log('YO from the homepage search component!!!');
-    console.log('NAV PROPS are', this.props.nav);
+    console.log('NAV PROPS are', this.props.navigator);
   }
 
   constructor(props){
@@ -38,7 +38,7 @@ class HomepageSearchComponent extends Component {
       isLoading: true,
       countrySearch: this.state.countrySearch
     });
-    this.props.nav.push({
+    this.props.navigator.push({
       goToScreen: 'PhotoFeedScreen',
       countrySearch: this.state.countrySearch
     });

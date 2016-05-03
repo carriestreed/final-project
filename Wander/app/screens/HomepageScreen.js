@@ -23,7 +23,7 @@ class HomepageScreen extends Component {
     return (
       <View>
         <HomepageSearchComponent
-          nav={this.props.navigator}
+          navigator={this.props.navigator}
           />
         <FeaturedComponent />
       </View>

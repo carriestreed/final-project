@@ -11,7 +11,7 @@ class PhotoFeedSearchComponent extends Component {
   render(){
     return (
       <View style={styles.mainContainer}>
-        <Text> {`Yo I'm going to be a search bar`}</Text>
+        <Text> {`Yo I'm going to be an IOS Native searchbar`} </Text>
       </View>
     )
   }
@@ -20,6 +20,9 @@ class PhotoFeedSearchComponent extends Component {
 const styles=StyleSheet.create({
   mainContainer: {
     backgroundColor: '#fff',
+    height: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 })
 
