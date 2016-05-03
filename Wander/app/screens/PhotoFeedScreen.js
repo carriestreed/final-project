@@ -32,13 +32,16 @@ class PhotoFeedScreen extends Component {
 
   renderPhotoRow(photoData){
     return (
-      <View style={styles.personRow}>
+      <View style={styles.dataRow}>
         <Image
+          style={styles.photoRow}
           source={{uri:photoData.url}}
           >
-          <Text style={styles.personText}>
-            {photoData.description}
+
+          <Text style={styles.dataText}>
+            {`need to build click or swipe for description`}
           </Text>
+
         </Image>
       </View>
 
@@ -57,6 +60,32 @@ class PhotoFeedScreen extends Component {
     )
   }
 }
+
+
+const styles=StyleSheet.create({
+  mainContainer: {
+    backgroundColor: '#000',
+  },
+  searchBgImage: {
+    flex: 1,
+    width: null,
+    height: null,
+    resizeMode: 'cover',
+  },
+  dataRow: {
+    flexDirection: 'column',
+  },
+  photoRow: {
+    flex: 1,
+    width: null,
+    height: 500,
+    resizeMode: 'cover',
+    marginBottom: 15,
+  },
+  dataText: {
+    fontSize: 20,
+  }
+});
 
 
 const photo = [
@@ -108,19 +137,5 @@ const photo = [
 
 
 
-const styles=StyleSheet.create({
-  searchBgImage: {
-    flex: 1,
-    width: null,
-    height: null,
-    resizeMode: 'cover',
-  },
-  personRow: {
-    flexDirection: 'column',
-  },
-  personText: {
-    fontSize: 20,
-  }
-});
 
 export default PhotoFeedScreen;
