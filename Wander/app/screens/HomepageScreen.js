@@ -15,7 +15,6 @@ class HomepageScreen extends Component {
 
   componentDidMount(){
     console.log('HELLO from the homepage screen!!!');
-    console.log('NAV PROPS are', this.props.navigator);
     console.log('USER is', this.props.username);
     console.log('PASSWORD is', this.props.password);
   }

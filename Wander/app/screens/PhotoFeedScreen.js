@@ -51,7 +51,7 @@ class PhotoFeedScreen extends Component {
   componentDidMount(){
     console.log('HELLO from the photo feed screen!!!');
     console.log('NAV PROPS are', this.props.navigator);
-    console.log('SEARCHING for ', this.props.searchInput);
+    console.log('SEARCHING for ', this.props.countrySearch);
   }
 
   renderPhotoRow(testData){

@@ -21,7 +21,7 @@ class HomepageSearchComponent extends Component {
   constructor(props){
     super(props);
     this.state = {
-      countrySearch: '',
+      countrySearch: 'Thailand',
       isLoading: false,
       error: false
     }
@@ -61,6 +61,7 @@ class HomepageSearchComponent extends Component {
             placeholder='enter a destination'
             placeholderTextColor='rgba(255,255,255,.7)'
             style={styles.searchInput}
+            value={this.state.countrySearch}
             onChange={this.handleChange.bind(this)}
           />
 
