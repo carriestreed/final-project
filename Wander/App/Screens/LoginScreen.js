@@ -36,7 +36,7 @@ class LoginScreen extends Component {
     });
   }
 
-  _navigateToPhotoFeedScreen(){
+  navigateToHomepageScreen(){
     this.setState({
       isLoading: true
     });
@@ -48,7 +48,7 @@ class LoginScreen extends Component {
     });
   }
 
-  _navigateToRegisterScreen(){
+  navigateToRegisterScreen(){
     this.setState({
       isLoading: true
     });
@@ -65,7 +65,7 @@ class LoginScreen extends Component {
 
           <View style={styles.formContainer}>
             <Text style={styles.logo}>
-              WANDER
+              {`WANDER`}
             </Text>
 
             <TextInput
@@ -83,19 +83,19 @@ class LoginScreen extends Component {
 
             <TouchableHighlight
               style={styles.submitBtn}
-              onPress={this._navigateToPhotoFeedScreen.bind(this)}
-              underlayColor='#fff'>
+              onPress={this.navigateToHomepageScreen.bind(this)}
+              underlayColor='rgba(24, 125, 173, 0.8)'>
               <Text style={styles.btnText}>
-                Login
+                {`Login`}
               </Text>
             </TouchableHighlight>
 
             <TouchableHighlight
               style={styles.submitBtn}
-              onPress={this._navigateToRegisterScreen.bind(this)}
-              underlayColor='#fff'>
+              onPress={this.navigateToRegisterScreen.bind(this)}
+              underlayColor='rgba(24, 125, 173, 0.8)'>
               <Text style={styles.btnText}>
-                Register
+                {`Register`}
               </Text>
             </TouchableHighlight>
 

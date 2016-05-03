@@ -51,11 +51,10 @@ class PhotoFeedScreen extends Component {
   componentDidMount(){
     console.log('HELLO from the photo feed screen!!!');
     console.log('NAV PROPS are', this.props.navigator);
-    console.log('USER is', this.props.username);
-    console.log('PASSWORD is', this.props.password);
+    console.log('SEARCHING for ', this.props.searchInput);
   }
 
-  _renderPersonRow(testData){
+  renderPhotoRow(testData){
     return (
       <View style={styles.personRow}>
         <Image
@@ -79,7 +78,7 @@ class PhotoFeedScreen extends Component {
         <StatusBarBg />
         <ListView
           dataSource={this.state.testDataSource}
-          renderRow={(testData) => {return this._renderPersonRow(testData)}}
+          renderRow={(testData) => {return this.renderPhotoRow(testData)}}
         />
       </ViewContainer>
     )

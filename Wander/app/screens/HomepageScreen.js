@@ -23,7 +23,9 @@ class HomepageScreen extends Component {
   hpContent(){
     return (
       <View>
-        <HomepageSearchComponent />
+        <HomepageSearchComponent
+          nav={this.props.navigator}
+          />
         <FeaturedComponent />
       </View>
     )

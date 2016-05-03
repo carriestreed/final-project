@@ -13,10 +13,15 @@ import React, {
 
 class HomepageSearchComponent extends Component {
 
+  componentDidMount(){
+    console.log('YO from the homepage search component!!!');
+    console.log('NAV PROPS are', this.props.nav);
+  }
+
   constructor(props){
     super(props);
     this.state = {
-      countryName: '',
+      countrySearch: '',
       isLoading: false,
       error: false
     }
@@ -24,15 +29,21 @@ class HomepageSearchComponent extends Component {
 
   handleChange(event){
     this.setState({
-      countryName: event.nativeEvent.text
+      countrySearch: event.nativeEvent.text
     });
   }
 
-  handleSubmit(){
+  navigateToPhotoFeedScreen(){
     this.setState({
-      isLoading: true
+      isLoading: true,
+      countrySearch: this.state.countrySearch
     });
-    console.log('searching for', this.state.countryName)
+    this.props.nav.push({
+      goToScreen: 'PhotoFeedScreen',
+      countrySearch: this.state.countrySearch
+    });
+    console.log('searching for', this.state.countrySearch)
+
   }
 
   render(){
@@ -55,8 +66,8 @@ class HomepageSearchComponent extends Component {
 
           <TouchableHighlight
             style={styles.submitBtn}
-            onPress={this.handleSubmit.bind(this)}
-            underlayColor='#fff'>
+            onPress={this.navigateToPhotoFeedScreen.bind(this)}
+            underlayColor='rgba(153, 184, 51, 0.9)'>
             <Text style={styles.btnText}>
               {`Take me there`}
             </Text>
