@@ -34,15 +34,12 @@ class PhotoFeedScreen extends Component {
     return (
       <View style={styles.personRow}>
         <Image
-          source={require('../images/bolivia.jpg')}
-        >
-        <Text style={styles.personText}>
-          {photoData.description}
-        </Text>
-
-
+          source={{uri:photoData.url}}
+          >
+          <Text style={styles.personText}>
+            {photoData.description}
+          </Text>
         </Image>
-
       </View>
 
     )
