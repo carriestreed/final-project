@@ -45,20 +45,23 @@ class HomepageSearchComponent extends Component {
           <Text style={styles.title}>
             Picture yourself, everywhere.
           </Text>
+
           <TextInput
-            placeholder='Enter A Country'
+            placeholder='enter a destination'
+            placeholderTextColor='rgba(255,255,255,.7)'
             style={styles.searchInput}
-            value={this.state.username}
             onChange={this.handleChange.bind(this)}
           />
+
           <TouchableHighlight
             style={styles.submitBtn}
             onPress={this.handleSubmit.bind(this)}
             underlayColor='#fff'>
             <Text style={styles.btnText}>
-              Go
+              {`Take me there`}
             </Text>
           </TouchableHighlight>
+
         </View>
       </Image>
     )
@@ -66,18 +69,11 @@ class HomepageSearchComponent extends Component {
 }
 
 const styles=StyleSheet.create({
-  temp: {
-    backgroundColor: 'transparent',
-  },
   mainContainer: {
     backgroundColor: '#fff',
   },
   statusBg: {
     backgroundColor: '#fff',
-  },
-  title: {
-    fontSize: 20,
-    backgroundColor: 'transparent',
   },
   searchBgImage: {
     flex: 1,
@@ -85,9 +81,54 @@ const styles=StyleSheet.create({
     height: 650,
     resizeMode: 'cover',
   },
+  formContainer: {
+    margin: 20,
+  },
+  title: {
+    fontFamily: 'NewsCycle-Bold',
+    fontSize: 30,
+    textShadowColor: 'rgba(0,0,0,1)',
+    textShadowOffset: {width: 1, height: 1},
+    textShadowRadius: 5,
+    color: 'white',
+    backgroundColor: 'transparent',
+    alignSelf: 'center',
+    marginTop: 120,
+  },
+  searchInput: {
+    fontFamily: 'NewsCycle-Bold',
+    fontSize: 25,
+    height: 50,
+    padding: 10,
+    margin: 5,
+    marginTop: 20,
+    borderWidth: 1,
+    borderRadius: 6,
+    borderColor: 'rgba(255,255,255,.7)',
+    backgroundColor: 'rgba(0,0,0, 0.3)',
+    color: 'rgba(255,255,255,.9)',
+    textAlign: 'center',
+  },
   textStyle: {
     flex:1,
     fontSize: 20,
+  },
+  btnText: {
+    fontFamily: 'NewsCycle-Bold',
+    fontSize: 25,
+    color: 'rgba(255, 255, 255, .9)',
+    alignSelf: 'center'
+  },
+  submitBtn: {
+    height: 50,
+    flexDirection: 'row',
+    backgroundColor: 'rgba(116, 138, 42, 0.9)',
+    borderColor: 'rgba(0,0,0,.1)',
+    borderWidth: 1,
+    borderRadius: 6,
+    marginTop: 10,
+    margin: 4,
+    justifyContent: 'center'
   },
 });
 
