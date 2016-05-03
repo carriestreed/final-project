@@ -41,6 +41,7 @@ class AppNavigator extends Component {
           <PhotoFeedScreen
             {...globalNavigatorProps}
             countrySearch={route.countrySearch}
+            photoInfo={route.photoInfo}
           />
         )
 

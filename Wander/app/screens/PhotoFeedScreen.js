@@ -21,7 +21,6 @@ class PhotoFeedScreen extends Component {
 
   componentDidMount(){
     console.log('HELLO from the photo feed screen!!!');
-    console.log('NAV PROPS are', this.props.navigator);
     console.log('SEARCHING for ', this.props.countrySearch);
   }
 
@@ -32,18 +31,18 @@ class PhotoFeedScreen extends Component {
       photoDataSource: ds.cloneWithRows(photo),
       isLoading: 'false',
       error: 'false',
-      photoInfo: '',
     }
   }
 
-  navigateToPhotoInfoScreen(){
+  navigateToPhotoInfoScreen(el){
+    console.log('PROPS WORKING???', el)
     this.setState({
       isLoading: 'true',
     });
     this.props.navigator.push({
       goToScreen: 'PhotoInfoScreen',
       sceneConfig: Navigator.SceneConfigs.HorizontalSwipeJump,
-      photoInfo: this.state.photoInfo
+      photoInfo: el
     });
   }
 
@@ -51,19 +50,17 @@ class PhotoFeedScreen extends Component {
     return (
       <View style={styles.dataRow}>
         <TouchableOpacity
-          onPress={this.navigateToPhotoInfoScreen.bind(this)}>
+          onPress={(event) => this.navigateToPhotoInfoScreen(photoData)}
+          >
           <Image
             style={styles.photoRow}
             source={{uri:photoData.url}}
-            >
-
-            <Text style={styles.dataText}>
-              {`need to build click or swipe for description`}
-            </Text>
-          </Image>
+            />
+          <Text style={styles.dataText}>
+            {photoData.description}
+          </Text>
         </TouchableOpacity>
       </View>
-
     )
   }
 
@@ -73,6 +70,7 @@ class PhotoFeedScreen extends Component {
         <StatusBarBg />
         <PhotoFeedSearchComponent />
         <ListView
+          style={styles.mainContainer}
           dataSource={this.state.photoDataSource}
           renderRow={(photoData) => {return this.renderPhotoRow(photoData)}}
         />
@@ -83,16 +81,7 @@ class PhotoFeedScreen extends Component {
 
 const styles=StyleSheet.create({
   mainContainer: {
-    backgroundColor: '#000',
-  },
-  searchBgImage: {
-    flex: 1,
-    width: null,
-    height: null,
-    resizeMode: 'cover',
-  },
-  dataRow: {
-    flexDirection: 'column',
+    backgroundColor: '#fff',
   },
   photoRow: {
     flex: 1,
@@ -103,6 +92,8 @@ const styles=StyleSheet.create({
   },
   dataText: {
     fontSize: 20,
+    marginTop: 5,
+    marginBottom: 40,
   }
 });
 
