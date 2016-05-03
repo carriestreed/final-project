@@ -8,6 +8,8 @@ import React, {
   Image,
   ListView,
   TouchableOpacity,
+  TouchableHighlight,
+  Navigator,
 } from 'react-native';
 
 import StatusBarBg from '../components/StatusBarBg';
@@ -17,33 +19,48 @@ import PhotoFeedSearchComponent from '../components/PhotoFeedSearchComponent';
 
 class PhotoFeedScreen extends Component {
 
-  constructor(props){
-    super(props)
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 != r2})
-    this.state = {
-      photoDataSource: ds.cloneWithRows(photo)
-    }
-  }
-
   componentDidMount(){
     console.log('HELLO from the photo feed screen!!!');
     console.log('NAV PROPS are', this.props.navigator);
     console.log('SEARCHING for ', this.props.countrySearch);
   }
 
+  constructor(props){
+    super(props)
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 != r2})
+    this.state = {
+      photoDataSource: ds.cloneWithRows(photo),
+      isLoading: 'false',
+      error: 'false',
+      photoInfo: '',
+    }
+  }
+
+  navigateToPhotoInfoScreen(){
+    this.setState({
+      isLoading: 'true',
+    });
+    this.props.navigator.push({
+      goToScreen: 'PhotoInfoScreen',
+      photoInfo: this.state.photoInfo
+    });
+  }
+
   renderPhotoRow(photoData){
     return (
       <View style={styles.dataRow}>
-        <Image
-          style={styles.photoRow}
-          source={{uri:photoData.url}}
-          >
+        <TouchableOpacity
+          onPress={this.navigateToPhotoInfoScreen.bind(this)}>
+          <Image
+            style={styles.photoRow}
+            source={{uri:photoData.url}}
+            >
 
-          <Text style={styles.dataText}>
-            {`need to build click or swipe for description`}
-          </Text>
-
-        </Image>
+            <Text style={styles.dataText}>
+              {`need to build click or swipe for description`}
+            </Text>
+          </Image>
+        </TouchableOpacity>
       </View>
 
     )

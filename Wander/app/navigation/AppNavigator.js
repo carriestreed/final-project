@@ -11,6 +11,7 @@ import StatusBarBg from '../components/StatusBarBg';
 import LoginScreen from '../screens/LoginScreen';
 import HomepageScreen from '../screens/HomepageScreen';
 import PhotoFeedScreen from '../screens/PhotoFeedScreen';
+import PhotoInfoScreen from '../screens/PhotoInfoScreen';
 
 
 class AppNavigator extends Component {
@@ -43,6 +44,14 @@ class AppNavigator extends Component {
           />
         )
 
+        case 'PhotoInfoScreen':
+        return (
+          <PhotoInfoScreen
+            {...globalNavigatorProps}
+            photoInfo={route.photoInfo}
+          />
+        )
+
         default:
         return (
           <View>
@@ -53,7 +62,7 @@ class AppNavigator extends Component {
       }
     }
 
-  render() {
+  render(){
     return (
       <Navigator
         initialRoute={this.props.initialRoute}
