@@ -7,6 +7,8 @@ import React, {
 } from 'react-native';
 
 import StatusBarBg from '../components/StatusBarBg';
+import PhotoFeedSearchComponent from '../components/PhotoFeedSearchComponent';
+
 
 class PhotoInfoScreen extends Component {
 
@@ -14,7 +16,7 @@ class PhotoInfoScreen extends Component {
     return (
       <View>
         <StatusBarBg />
-        <Text>{`I'm the photo info screen`}</Text>
+        <PhotoFeedSearchComponent />
       </View>
     )
   }

@@ -42,6 +42,7 @@ class PhotoFeedScreen extends Component {
     });
     this.props.navigator.push({
       goToScreen: 'PhotoInfoScreen',
+      sceneConfig: Navigator.SceneConfigs.HorizontalSwipeJump,
       photoInfo: this.state.photoInfo
     });
   }
