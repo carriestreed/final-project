@@ -94,6 +94,8 @@ const styles=StyleSheet.create({
   },
   dataText: {
     marginBottom: 40,
+    marginTop: -8,
+    margin: 3,
   }
 });
 
