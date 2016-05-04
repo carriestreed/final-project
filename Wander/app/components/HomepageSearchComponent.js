@@ -8,8 +8,10 @@ import React, {
   View,
   TextInput,
   TouchableHighlight,
-
 } from 'react-native';
+
+import ajaxHelpers from '../utils/ajaxHelpers';
+
 
 class HomepageSearchComponent extends Component {
 
@@ -21,6 +23,7 @@ class HomepageSearchComponent extends Component {
   constructor(props){
     super(props);
     this.state = {
+      ajaxReturn: [],
       countrySearch: 'Thailand',
       isLoading: false,
       error: false
@@ -31,6 +34,16 @@ class HomepageSearchComponent extends Component {
     this.setState({
       countrySearch: event.nativeEvent.text
     });
+  }
+
+  userInputAjaxCall(){
+    let userInput = 'Thailand';
+    ajaxHelpers.callCountry(userInput)
+    .then((response) => response.json())
+    .then((responseData) => {
+      console.log('heyy im the ajax call fxn', responseData)
+    })
+    .done();
   }
 
   navigateToPhotoFeedScreen(){
@@ -65,7 +78,7 @@ class HomepageSearchComponent extends Component {
 
           <TouchableHighlight
             style={styles.submitBtn}
-            onPress={this.navigateToPhotoFeedScreen.bind(this)}
+            onPress={this.userInputAjaxCall}
             underlayColor='rgba(153, 184, 51, 0.9)'>
             <Text style={styles.btnText}>
               {`Take me there`}

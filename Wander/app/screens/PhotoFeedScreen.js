@@ -23,6 +23,7 @@ class PhotoFeedScreen extends Component {
   componentDidMount(){
     console.log('HELLO from the photo feed screen!!!');
     console.log('SEARCHING for ', this.props.countrySearch);
+    
   }
 
   constructor(props){
