@@ -22,13 +22,15 @@ class PhotoFeedScreen extends Component {
 
   componentDidMount(){
     console.log('HELLO from the photo feed screen!!!');
-    console.log('SEARCHING for ', this.props.countrySearch);
-    
+    console.log('ajax return', this.props.countrySearch);
+
   }
 
   constructor(props){
     super(props)
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 != r2})
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 != r2});
+    let photo = this.props.countrySearch.photos.photo;
+    console.log('yo im photo', photo)
     this.state = {
       photoDataSource: ds.cloneWithRows(photo),
       isLoading: 'false',
@@ -59,7 +61,7 @@ class PhotoFeedScreen extends Component {
               source={{uri:photoData.url}}
               />
             <Text style={styles.dataText}>
-              {`Photographer: `}{photoData.author}
+              {`Title: `}{photoData.title}
             </Text>
           </View>
         </TouchableWithoutFeedback>
@@ -99,56 +101,6 @@ const styles=StyleSheet.create({
     margin: 3,
   }
 });
-
-
-const photo = [
-  {
-    id: 4,
-    url: "http://www.expatliving.sg/incoming/article59374.ece/alternates/w1024/_MG_3110.jpg",
-    title: "Salt Flats",
-    description: "Truman Show. Dolly the Sheep flip flops Fresh Prince of Bel-Air sideburns gangsta’s paradise, Air Jordans cargo pants Geo Metro incididunt Oakleys. Michael Jordan Spice Girls animated GIFs Sublime frosted tips gettin’ jiggy wit it. Choker necklace Nirvana laborum Kazaa Saved by the Bell. As I lay me down to sleep Roseanne Hush Puppies nylon windbreaker Tommy Hilfiger duis.",
-    author: "Eustace",
-    date: "April 9",
-    location: "Bolivia",
-    created_at: "2016-05-01T20:46:15.497Z",
-    updated_at: "2016-05-01T20:46:15.497Z"
-  },
-  {
-    id: 2,
-    url: "http://blog.iamnikon.com/en_GB/wp-content/uploads/SCOTT-A-WOODWARD_1SW1943.jpg",
-    title: "Salt Flats",
-    description: "Dolly the Sheep flip flops Fresh Prince of Bel-Air sideburns gangsta’s paradise, Air Jordans cargo pants Geo Metro incididunt Oakleys. Michael Jordan Spice Girls animated GIFs Sublime frosted tips gettin’ jiggy wit it. Choker necklace Nirvana laborum Kazaa Saved by the Bell. As I lay me down to sleep Roseanne Hush Puppies nylon windbreaker Tommy Hilfiger duis.",
-    author: "Eustace",
-    date: "April 9",
-    location: "Bolivia",
-    created_at: "2016-05-01T20:46:15.497Z",
-    updated_at: "2016-05-01T20:46:15.497Z"
-  },
-  {
-    id: 3,
-    url: "http://blog.topazlabs.com/wp-content/uploads/2014/04/scott_stulberg_13.jpg",
-    title: "Salt Flats",
-    description: "Bel-Air sideburns gangsta’s paradise, Air Jordans cargo pants Geo Metro incididunt Oakleys. Michael Jordan Spice Girls animated GIFs Sublime frosted tips gettin’ jiggy wit it. Choker necklace Nirvana laborum Kazaa Saved by the Bell. As I lay me down to sleep Roseanne Hush Puppies nylon windbreaker Tommy Hilfiger duis.",
-    author: "Eustace",
-    date: "April 9",
-    location: "Bolivia",
-    created_at: "2016-05-01T20:46:15.497Z",
-    updated_at: "2016-05-01T20:46:15.497Z"
-  },
-  {
-    id: 1,
-    url: "https://www.newscientist.com/blogs/shortsharpscience/assets_c/2011/06/00130493-thumb-600x400-128963.jpg",
-    title: "Salt Flats",
-    description: "Trippin screening phone calls parting your hair down the middle the Truman Show. Dolly the Sheep flip flops Fresh Prince of Bel-Air sideburns gangsta’s paradise, Air Jordans cargo pants Geo Metro incididunt Oakleys. Michael Jordan Spice Girls animated GIFs Sublime frosted tips gettin’ jiggy wit it. Choker necklace Nirvana laborum Kazaa Saved by the Bell. As I lay me down to sleep Roseanne Hush Puppies nylon windbreaker Tommy Hilfiger duis.",
-    author: "Eustace",
-    date: "April 9",
-    location: "Bolivia",
-    created_at: "2016-05-01T20:46:15.497Z",
-    updated_at: "2016-05-01T20:46:15.497Z"
-  },
-]
-
-
 
 
 export default PhotoFeedScreen;

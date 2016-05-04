@@ -24,7 +24,7 @@ class HomepageSearchComponent extends Component {
     super(props);
     this.state = {
       ajaxReturn: [],
-      countrySearch: '',
+      countrySearch: 'Antarctica',
       isLoading: false,
       error: false
     }
