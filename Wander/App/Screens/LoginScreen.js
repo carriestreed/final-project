@@ -74,12 +74,14 @@ class LoginScreen extends Component {
 
             <TextInput
               placeholder='username'
+              placeholderTextColor='rgba(255,255,255,.6)'
               style={styles.formInput}
               value={this.state.username}
               onChange={this.handleUsername.bind(this)}
               />
             <TextInput
               placeholder='password'
+              placeholderTextColor='rgba(255,255,255,.6)'
               style={styles.formInput}
               value={this.state.password}
               onChange={this.handlePassword.bind(this)}
