@@ -65,7 +65,7 @@ class PhotoInfoScreen extends Component {
           </Text>
 
           <Text style={styles.dataAuthor}>
-            {`\n`}{`Taken by`} {this.state.realname || this.state.username}
+            {`\n`}{`Photo by`} {this.state.realname || this.state.username}
           </Text>
 
             {`\n`}{this.state.description}
