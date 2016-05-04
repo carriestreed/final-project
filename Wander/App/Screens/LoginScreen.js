@@ -53,6 +53,10 @@ class LoginScreen extends Component {
       isLoading: true
     });
     console.log('should Route to Register screen');
+    this.props.navigator.push({
+      goToScreen: 'RegisterScreen',
+      sceneConfig: Navigator.SceneConfigs.FloatFromBottom,
+    });
   }
 
   render(){

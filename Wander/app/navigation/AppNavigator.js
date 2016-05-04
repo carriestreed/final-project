@@ -12,6 +12,7 @@ import LoginScreen from '../screens/LoginScreen';
 import HomepageScreen from '../screens/HomepageScreen';
 import PhotoFeedScreen from '../screens/PhotoFeedScreen';
 import PhotoInfoScreen from '../screens/PhotoInfoScreen';
+import RegisterScreen from '../screens/RegisterScreen';
 
 
 class AppNavigator extends Component {
@@ -23,6 +24,13 @@ class AppNavigator extends Component {
         case 'LoginScreen':
         return (
           <LoginScreen
+            {...globalNavigatorProps}
+          />
+        )
+
+        case 'RegisterScreen':
+        return (
+          <RegisterScreen
             {...globalNavigatorProps}
           />
         )
