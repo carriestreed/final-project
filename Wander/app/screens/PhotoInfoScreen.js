@@ -17,12 +17,15 @@ class PhotoInfoScreen extends Component {
 
   componentDidMount(){
     console.log('youre in the photo INFO screen!');
+    console.log('photo url', this.props.photoUri);
+    console.log('photo desc', this.props.photoData);
   }
 
   constructor(props){
     super(props)
     this.state = {
-      photoInfo: this.props.photoInfo
+      photoInfo: this.props.photoInfo,
+      photoUri: this.props.photoUri
     }
   }
 
@@ -32,7 +35,7 @@ class PhotoInfoScreen extends Component {
       <ScrollView>
         <Image
           style={styles.photo}
-          source={{uri:this.state.photoInfo.url}}/>
+          source={{uri:this.state.photoUri}}/>
         <Text style={styles.dataText}>
         <Text style={styles.dataTitle}>
           {this.state.photoInfo.title}

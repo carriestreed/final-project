@@ -30,7 +30,6 @@ class PhotoFeedScreen extends Component {
     super(props)
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 != r2});
     let photo = this.props.countrySearch.photos.photo;
-    console.log('yo im photo', photo)
     this.state = {
       photoDataSource: ds.cloneWithRows(photo),
       isLoading: 'false',
@@ -38,14 +37,15 @@ class PhotoFeedScreen extends Component {
     }
   }
 
-  navigateToPhotoInfoScreen(el){
+  navigateToPhotoInfoScreen(photoData){
     this.setState({
       isLoading: 'true',
     });
     this.props.navigator.push({
       goToScreen: 'PhotoInfoScreen',
       sceneConfig: Navigator.SceneConfigs.HorizontalSwipeJump,
-      photoInfo: el
+      photoInfo: photoData,
+      photoUri: `https://farm${photoData.farm}.staticflickr.com/${photoData.server}/${photoData.id}_${photoData.secret}_z.jpg`,
     });
   }
 
@@ -61,7 +61,7 @@ class PhotoFeedScreen extends Component {
               source={{uri:`https://farm${photoData.farm}.staticflickr.com/${photoData.server}/${photoData.id}_${photoData.secret}_z.jpg`}}
               />
             <Text style={styles.dataText}>
-              {`Title: `}{photoData.title}
+              {`more features will go here`}
             </Text>
           </View>
         </TouchableWithoutFeedback>

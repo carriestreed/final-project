@@ -41,7 +41,6 @@ class HomepageSearchComponent extends Component {
     ajaxHelpers.callCountry(userInput)
     .then((response) => response.json())
     .then((responseData) => {
-      console.log('heyy im the ajax call fxn', responseData)
       this.setState({
         ajaxReturn: responseData
       })

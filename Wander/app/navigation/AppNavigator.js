@@ -41,7 +41,6 @@ class AppNavigator extends Component {
           <PhotoFeedScreen
             {...globalNavigatorProps}
             countrySearch={route.countrySearch}
-            photoInfo={route.photoInfo}
           />
         )
 
@@ -50,6 +49,7 @@ class AppNavigator extends Component {
           <PhotoInfoScreen
             {...globalNavigatorProps}
             photoInfo={route.photoInfo}
+            photoUri={route.photoUri}
           />
         )
 
