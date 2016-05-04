@@ -12,8 +12,8 @@ import React, {
 import StatusBarBg from '../components/StatusBarBg';
 import PhotoFeedSearchComponent from '../components/PhotoFeedSearchComponent';
 import ViewContainer from '../components/ViewContainer';
+import MapViewComponent from '../components/MapViewComponent';
 import ajaxHelpers from '../utils/ajaxHelpers';
-
 
 class PhotoInfoScreen extends Component {
 
@@ -68,6 +68,7 @@ class PhotoInfoScreen extends Component {
 
           {`\n`}{this.state.description}
         </Text>
+        <MapViewComponent/>
       </ScrollView>
     )
   }
