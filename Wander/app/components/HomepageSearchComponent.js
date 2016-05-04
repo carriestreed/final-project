@@ -15,10 +15,6 @@ import ajaxHelpers from '../utils/ajaxHelpers';
 
 class HomepageSearchComponent extends Component {
 
-  componentDidMount(){
-    console.log('YO from the homepage search component!!!');
-  }
-
   constructor(props){
     super(props);
     this.state = {

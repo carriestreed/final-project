@@ -14,11 +14,10 @@ import PhotoFeedSearchComponent from '../components/PhotoFeedSearchComponent';
 import ViewContainer from '../components/ViewContainer';
 import ajaxHelpers from '../utils/ajaxHelpers';
 
+
 class PhotoInfoScreen extends Component {
 
   componentDidMount(){
-    console.log('youre in the photo INFO screen!');
-
     let photoId = this.state.photoId;
 
     ajaxHelpers.getPhotoInfo(photoId)
@@ -54,11 +53,10 @@ class PhotoInfoScreen extends Component {
   renderPhotoDescription(){
     return(
       <ScrollView>
-
         <Image
           style={styles.photo}
           source={{uri:this.state.photoUri}}
-          />
+        />
         <Text style={styles.dataText}>
           <Text style={styles.dataTitle}>
             {this.state.title}
@@ -68,9 +66,8 @@ class PhotoInfoScreen extends Component {
             {`\n`}{`Photo by`} {this.state.realname || this.state.username}
           </Text>
 
-            {`\n`}{this.state.description}
+          {`\n`}{this.state.description}
         </Text>
-
       </ScrollView>
     )
   }

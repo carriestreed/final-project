@@ -14,7 +14,6 @@ import FeaturedComponent from '../components/FeaturedComponent';
 class HomepageScreen extends Component {
 
   componentDidMount(){
-    console.log('HELLO from the homepage screen!!!');
     console.log('USER is', this.props.username);
     console.log('PASSWORD is', this.props.password);
   }

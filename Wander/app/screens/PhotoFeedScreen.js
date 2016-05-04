@@ -21,7 +21,6 @@ import PhotoFeedSearchComponent from '../components/PhotoFeedSearchComponent';
 class PhotoFeedScreen extends Component {
 
   componentDidMount(){
-    console.log('HELLO from the photo feed screen!!!');
     console.log('ajax return', this.props.countrySearch);
   }
 
@@ -37,7 +36,6 @@ class PhotoFeedScreen extends Component {
   }
 
   navigateToPhotoInfoScreen(photoData){
-    console.log('this is photo id', photoData.id)
     this.setState({
       isLoading: 'true',
     });
