@@ -9,6 +9,7 @@ const ajaxHelpers = {
   },
 
   getPhotoInfo: function(photoId){
+    console.log('in ajax helpers id is', photoId)
     return fetch('https://api.flickr.com/services/rest/?format=json&nojsoncallback=1&method=flickr.photos.getInfo&api_key=' + API_KEY + '&photo_id=' + photoId, {'method': 'GET'})
   },
 

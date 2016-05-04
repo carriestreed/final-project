@@ -48,7 +48,7 @@ class AppNavigator extends Component {
         return (
           <PhotoInfoScreen
             {...globalNavigatorProps}
-            photoInfo={route.photoInfo}
+            photoId={route.photoId}
             photoUri={route.photoUri}
           />
         )

@@ -11,39 +11,47 @@ import React, {
 
 import StatusBarBg from '../components/StatusBarBg';
 import PhotoFeedSearchComponent from '../components/PhotoFeedSearchComponent';
-import ViewContainer from '../components/ViewContainer.js';
+import ViewContainer from '../components/ViewContainer';
+import ajaxHelpers from '../utils/ajaxHelpers';
 
 class PhotoInfoScreen extends Component {
 
   componentDidMount(){
     console.log('youre in the photo INFO screen!');
-    console.log('photo url', this.props.photoUri);
-    console.log('photo desc', this.props.photoData);
+    console.log('photo uri', this.props.photoUri)
+    console.log('photo id', this.props.photoId)
+
+    let photoId = this.state.photoId;
+
+    ajaxHelpers.getPhotoInfo(photoId)
+    .then((response) => response.json())
+    .then((responseData) => {
+      this.setState({
+        ajaxReturn: responseData
+      })
+      this.renderPhotoDescription()
+    })
+    .done();
   }
 
   constructor(props){
     super(props)
     this.state = {
-      photoInfo: this.props.photoInfo,
+      ajaxReturn: [],
+      photoId: this.props.photoId,
       photoUri: this.props.photoUri
     }
   }
 
   renderPhotoDescription(){
-    console.log('in render phto fxn, props are', this.state.photoInfo)
+    console.log('in render phto fxn, props are', this.state.ajaxReturn)
+
     return(
       <ScrollView>
         <Image
           style={styles.photo}
           source={{uri:this.state.photoUri}}/>
-        <Text style={styles.dataText}>
-        <Text style={styles.dataTitle}>
-          {this.state.photoInfo.title}
-        </Text> {'\n'}
-          {`Taken by `}{this.state.photoInfo.author}
-          {` in `}{this.state.photoInfo.location}{'\n'}
-          {this.state.photoInfo.description}
-        </Text>
+
       </ScrollView>
     )
   }

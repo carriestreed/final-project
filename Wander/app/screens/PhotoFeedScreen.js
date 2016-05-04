@@ -23,7 +23,6 @@ class PhotoFeedScreen extends Component {
   componentDidMount(){
     console.log('HELLO from the photo feed screen!!!');
     console.log('ajax return', this.props.countrySearch);
-
   }
 
   constructor(props){
@@ -38,13 +37,14 @@ class PhotoFeedScreen extends Component {
   }
 
   navigateToPhotoInfoScreen(photoData){
+    console.log('this is photo id', photoData.id)
     this.setState({
       isLoading: 'true',
     });
     this.props.navigator.push({
       goToScreen: 'PhotoInfoScreen',
       sceneConfig: Navigator.SceneConfigs.HorizontalSwipeJump,
-      photoInfo: photoData,
+      photoId: photoData.id,
       photoUri: `https://farm${photoData.farm}.staticflickr.com/${photoData.server}/${photoData.id}_${photoData.secret}_z.jpg`,
     });
   }
