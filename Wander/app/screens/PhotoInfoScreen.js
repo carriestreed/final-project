@@ -18,8 +18,6 @@ class PhotoInfoScreen extends Component {
 
   componentDidMount(){
     console.log('youre in the photo INFO screen!');
-    console.log('photo uri', this.props.photoUri)
-    console.log('photo id', this.props.photoId)
 
     let photoId = this.state.photoId;
 
@@ -27,7 +25,12 @@ class PhotoInfoScreen extends Component {
     .then((response) => response.json())
     .then((responseData) => {
       this.setState({
-        ajaxReturn: responseData
+        title: responseData.photo.title._content,
+        realname: responseData.photo.owner.realname,
+        username: responseData.photo.owner.username,
+        description: responseData.photo.description._content,
+        lat: responseData.photo.location.latitude,
+        lon: responseData.photo.location.longitude,
       })
       this.renderPhotoDescription()
     })
@@ -37,20 +40,36 @@ class PhotoInfoScreen extends Component {
   constructor(props){
     super(props)
     this.state = {
-      ajaxReturn: [],
       photoId: this.props.photoId,
-      photoUri: this.props.photoUri
+      photoUri: this.props.photoUri,
+      title: '',
+      author: '',
+      description: '',
+      realname: '',
+      username: '',
     }
   }
 
-  renderPhotoDescription(){
-    console.log('in render phto fxn, props are', this.state.ajaxReturn)
 
+  renderPhotoDescription(){
     return(
       <ScrollView>
+
         <Image
           style={styles.photo}
-          source={{uri:this.state.photoUri}}/>
+          source={{uri:this.state.photoUri}}
+          />
+        <Text style={styles.dataText}>
+          <Text style={styles.dataTitle}>
+            {this.state.title}
+          </Text>
+
+          <Text style={styles.dataAuthor}>
+            {`\n`}{`Taken by`} {this.state.realname || this.state.username}
+          </Text>
+
+            {`\n`}{this.state.description}
+        </Text>
 
       </ScrollView>
     )
@@ -75,6 +94,10 @@ const styles=StyleSheet.create({
   },
   dataTitle: {
     fontSize: 25
+  },
+  dataAuthor: {
+    fontStyle: 'italic',
+    fontSize: 17
   },
   photo: {
     flex: 1,

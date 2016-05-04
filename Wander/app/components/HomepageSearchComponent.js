@@ -17,7 +17,6 @@ class HomepageSearchComponent extends Component {
 
   componentDidMount(){
     console.log('YO from the homepage search component!!!');
-    console.log('NAV PROPS are', this.props.navigator);
   }
 
   constructor(props){
