@@ -24,7 +24,7 @@ class HomepageSearchComponent extends Component {
     super(props);
     this.state = {
       ajaxReturn: [],
-      countrySearch: 'Thailand',
+      countrySearch: '',
       isLoading: false,
       error: false
     }
@@ -37,11 +37,15 @@ class HomepageSearchComponent extends Component {
   }
 
   userInputAjaxCall(){
-    let userInput = 'Thailand';
+    let userInput = this.state.countrySearch;
     ajaxHelpers.callCountry(userInput)
     .then((response) => response.json())
     .then((responseData) => {
       console.log('heyy im the ajax call fxn', responseData)
+      this.setState({
+        ajaxReturn: responseData
+      })
+      this.navigateToPhotoFeedScreen()
     })
     .done();
   }
@@ -53,7 +57,7 @@ class HomepageSearchComponent extends Component {
     });
     this.props.navigator.push({
       goToScreen: 'PhotoFeedScreen',
-      countrySearch: this.state.countrySearch
+      countrySearch: this.state.ajaxReturn
     });
   }
 
@@ -78,7 +82,7 @@ class HomepageSearchComponent extends Component {
 
           <TouchableHighlight
             style={styles.submitBtn}
-            onPress={this.userInputAjaxCall}
+            onPress={this.userInputAjaxCall.bind(this)}
             underlayColor='rgba(153, 184, 51, 0.9)'>
             <Text style={styles.btnText}>
               {`Take me there`}
