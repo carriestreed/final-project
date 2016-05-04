@@ -50,7 +50,7 @@ class PhotoFeedScreen extends Component {
   renderPhotoRow(photoData){
     return (
       <View style={styles.dataRow}>
-        <TouchableWithoutFeedback
+        <TouchableOpacity
           onPress={(event) => this.navigateToPhotoInfoScreen(photoData)}
           >
           <View>
@@ -62,7 +62,7 @@ class PhotoFeedScreen extends Component {
               {`more features will go here`}
             </Text>
           </View>
-        </TouchableWithoutFeedback>
+        </TouchableOpacity>
       </View>
     )
   }
