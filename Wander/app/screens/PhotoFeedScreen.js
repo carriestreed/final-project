@@ -58,7 +58,7 @@ class PhotoFeedScreen extends Component {
           <View>
             <Image
               style={styles.photoRow}
-              source={{uri:photoData.url}}
+              source={{uri:`https://farm${photoData.farm}.staticflickr.com/${photoData.server}/${photoData.id}_${photoData.secret}_z.jpg`}}
               />
             <Text style={styles.dataText}>
               {`Title: `}{photoData.title}
