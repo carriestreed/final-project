@@ -43,7 +43,7 @@ class PhotoFeedScreen extends Component {
       goToScreen: 'PhotoInfoScreen',
       sceneConfig: Navigator.SceneConfigs.HorizontalSwipeJump,
       photoId: photoData.id,
-      photoUri: `https://farm${photoData.farm}.staticflickr.com/${photoData.server}/${photoData.id}_${photoData.secret}_z.jpg`,
+      photoUri: `https://farm${photoData.farm}.staticflickr.com/${photoData.server}/${photoData.id}_${photoData.secret}_b.jpg`,
     });
   }
 
