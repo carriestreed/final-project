@@ -14,8 +14,8 @@ const ajaxHelpers = {
     return fetch('https://api.flickr.com/services/rest/?format=json&nojsoncallback=1&method=flickr.photos.getInfo&api_key=' + API_KEY + '&photo_id=' + photoId, {'method': 'GET'})
   },
 
-  register: function(userInfo){
-    console.log('hitting register fxn in ajaxhelpers with', userInfo);
+  register: function(user){
+    console.log('hitting register fxn in ajaxhelpers with', user);
     return fetch(baseUrl + '/auth', {'method':'POST'})
   },
 

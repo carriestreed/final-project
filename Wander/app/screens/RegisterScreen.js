@@ -22,7 +22,7 @@ class RegisterScreen extends Component {
     super(props);
     this.state = {
       name: 'carrie',
-      email: 'cmstreed@gmail.com',
+      email: 'carrie@carrie.com',
       password: 'test',
       password_confirmation: 'test',
       isLoading: false,
@@ -54,29 +54,16 @@ class RegisterScreen extends Component {
     });
   }
 
-  async handleAjaxCall(){
-    try {
-      let response = await fetch('http://localhost:3000/auth/', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          user: {
-            email: this.state.email,
-            password: this.state.password,
-            password_confirmation: this.state.password_confirmation
-          }
-        })
-      });
-      let res = await response.text();
-      console.log('res is:', res);
-
-    } catch (errors) {
-
+  handleAjaxCall(){
+    let callbackFxn = function(success) {
+      if (!success) {
+        console.log('There was an error');
+      } else {
+        console.log('successful sign up')
+      }
+    }.bind(this);
+      auth.register(this.state.email, this.state.password, this.state.password_confirmation, callbackFxn)
     }
-  }
 
   navigateToHomepageScreen(){
     this.setState({

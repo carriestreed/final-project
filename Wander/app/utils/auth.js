@@ -9,7 +9,7 @@ import ajaxHelpers from './ajaxHelpers';
 
 const auth  = {
 
-  signup(email, password, password_confirmation, afterSignupFxn) {
+  register(email, password, password_confirmation, afterSignupFxn) {
     console.log('in signup auth');
     console.log(email);
     console.log(password);
