@@ -2,9 +2,9 @@
 
 import API_KEY from './keys.js';
 
-const baseUrl = 'http://localhost:3000';
-
 const ajaxHelpers = {
+
+  baseUrl: 'http://localhost:3000',
 
   callCountry: function(userInput){
     return fetch('https://api.flickr.com/services/rest/?format=json&nojsoncallback=1&method=flickr.photos.search&api_key=' + API_KEY + '&sort=interestingness-desc&group_id=13197975%40N00&has_geo=1&tags=' + userInput, {'method': 'GET'})
@@ -16,7 +16,7 @@ const ajaxHelpers = {
 
   register: function(user){
     console.log('hitting register fxn in ajaxhelpers with', user);
-    return fetch(baseUrl + '/auth', {'method':'POST'})
+    // return fetch('http://localhost:3030/auth', {'method':'POST'})
   },
 
   signIn: function(afterAjaxFxn) {

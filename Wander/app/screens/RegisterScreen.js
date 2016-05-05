@@ -63,7 +63,7 @@ class RegisterScreen extends Component {
       }
     }.bind(this);
       auth.register(this.state.email, this.state.password, this.state.password_confirmation, callbackFxn)
-    }
+  }
 
   navigateToHomepageScreen(){
     this.setState({
