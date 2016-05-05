@@ -26,7 +26,7 @@ const ajaxHelpers = {
     })
   },
 
-  signIn: function(afterAjaxFxn) {
+  login: function(afterAjaxFxn) {
     console.log('hitting sign in fxn in ajaxhelpers');
   },
 

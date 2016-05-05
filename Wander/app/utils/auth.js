@@ -9,6 +9,20 @@ import ajaxHelpers from './ajaxHelpers';
 
 const auth  = {
 
+  login(email, password, afterLoginFxn) {
+
+    let user = {
+      email: email,
+      password: password
+    }
+
+    ajaxHelpers.login(user)
+    .then((response) => {
+      console.log('trying to login response', response);
+    })
+
+  },
+
   register(email, password, password_confirmation, afterSignupFxn) {
 
     let user = {
@@ -40,10 +54,6 @@ const auth  = {
         console.warn('ERROR', error);
         afterSignupFxn(false);
       })
-    },
-
-    login(email, password, afterSignInFxn) {
-      
     }
 
 }

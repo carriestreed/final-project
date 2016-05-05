@@ -41,6 +41,17 @@ class LoginScreen extends Component {
     });
   }
 
+  handleAjaxCall(){
+    let loginCallbackFxn = function(success) {
+      if (!success) {
+        console.log('There was an error');
+      } else {
+        console.log('successful sign up')
+      }
+    }.bind(this);
+      auth.register(this.state.email, this.state.password, this.state.password_confirmation, loginCallbackFxn)
+  }
+
   navigateToHomepageScreen(){
     this.setState({
       isLoading: true
@@ -105,7 +116,7 @@ class LoginScreen extends Component {
 
             <TouchableHighlight
               style={styles.submitBtn}
-              onPress={this.navigateToHomepageScreen.bind(this)}
+              onPress={this.handleAjaxCall.bind(this)}
               underlayColor='rgba(24, 125, 173, 0.8)'>
               <Text style={styles.btnText}>
                 {`Login`}
