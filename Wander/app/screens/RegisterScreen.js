@@ -8,19 +8,23 @@ import React, {
   Image,
   TextInput,
   TouchableHighlight,
+  Navigator,
 } from 'react-native';
 
 import StatusBarBg from '../components/StatusBarBg';
 import ViewContainer from '../components/ViewContainer';
+import ajaxHelpers from '../utils/ajaxHelpers';
+import auth from '../utils/auth';
 
 class RegisterScreen extends Component {
 
   constructor(props){
     super(props);
     this.state = {
-      username: '',
-      email: '',
-      password: '',
+      name: 'carrie',
+      email: 'cmstreed@gmail.com',
+      password: 'test',
+      password_confirmation: 'test',
       isLoading: false,
       error: false
     }
@@ -28,7 +32,7 @@ class RegisterScreen extends Component {
 
   handleUsername(event){
     this.setState({
-      username: event.nativeEvent.text,
+      name: event.nativeEvent.text,
     });
   }
 
@@ -41,6 +45,50 @@ class RegisterScreen extends Component {
   handlePassword(event){
     this.setState({
       password: event.nativeEvent.text,
+    });
+  }
+
+  handleConfirmPW(event){
+    this.setState({
+      password_confirmation: event.nativeEvent.text,
+    });
+  }
+
+  async handleAjaxCall(){
+    try {
+      let response = await fetch('http://localhost:3000/auth/', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          user: {
+            email: this.state.email,
+            password: this.state.password,
+            password_confirmation: this.state.password_confirmation
+          }
+        })
+      });
+      let res = await response.text();
+      console.log('res is:', res);
+
+    } catch (errors) {
+
+    }
+  }
+
+  navigateToHomepageScreen(){
+    this.setState({
+      isLoading: true
+    });
+    this.props.navigator.push({
+      goToScreen: 'HomepageScreen',
+      sceneConfig: Navigator.SceneConfigs.FloatFromBottom,
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+      password_confirmation: this.state.password_confirmation
     });
   }
 
@@ -61,7 +109,7 @@ class RegisterScreen extends Component {
               placeholder='Username'
               placeholderTextColor='rgba(255,255,255,.6)'
               style={styles.formInput}
-              value={this.state.username}
+              value={this.state.name}
               onChange={this.handleUsername.bind(this)}
               />
 
@@ -70,20 +118,20 @@ class RegisterScreen extends Component {
               placeholderTextColor='rgba(255,255,255,.6)'
               style={styles.formInput}
               value={this.state.password}
-              onChange={this.handlePassword}
+              onChange={this.handlePassword.bind(this)}
               />
 
             <TextInput
               placeholder='Confirm Password'
               placeholderTextColor='rgba(255,255,255,.6)'
               style={styles.formInput}
-              value={this.state.password}
-              onChange={this.handlePassword}
+              value={this.state.password_confirmation}
+              onChange={this.handleConfirmPW.bind(this)}
               />
 
             <TouchableHighlight
               style={styles.submitBtn}
-              onPress={this.navigateToHomepageScreen}
+              onPress={this.handleAjaxCall.bind(this)}
               underlayColor='rgba(24, 125, 173, 0.8)'>
               <Text style={styles.btnText}>
                 {`Register`}

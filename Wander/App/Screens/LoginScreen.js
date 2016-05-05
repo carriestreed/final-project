@@ -11,6 +11,8 @@ import React, {
   Navigator
 } from 'react-native';
 
+import auth from '../utils/auth';
+
 
 class LoginScreen extends Component {
 
@@ -20,7 +22,8 @@ class LoginScreen extends Component {
       username: 'Carrie',
       password: 'Testing',
       isLoading: false,
-      error: false
+      error: false,
+      success: '',
     }
   }
 
@@ -52,7 +55,6 @@ class LoginScreen extends Component {
     this.setState({
       isLoading: true
     });
-    console.log('should Route to Register screen');
     this.props.navigator.push({
       goToScreen: 'RegisterScreen',
       sceneConfig: Navigator.SceneConfigs.FloatFromBottom,

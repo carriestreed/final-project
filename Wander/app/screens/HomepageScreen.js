@@ -13,11 +13,6 @@ import FeaturedComponent from '../components/FeaturedComponent';
 
 class HomepageScreen extends Component {
 
-  componentDidMount(){
-    console.log('USER is', this.props.username);
-    console.log('PASSWORD is', this.props.password);
-  }
-
   hpContent(){
     return (
       <View>

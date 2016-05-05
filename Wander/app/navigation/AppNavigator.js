@@ -39,8 +39,10 @@ class AppNavigator extends Component {
         return (
           <HomepageScreen
             {...globalNavigatorProps}
-            username={route.username}
+            name={route.name}
+            email={route.email}
             password={route.password}
+            password_confirmation={route.password_confirmation}
           />
         )
 
