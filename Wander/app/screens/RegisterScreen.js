@@ -22,7 +22,7 @@ class RegisterScreen extends Component {
     super(props);
     this.state = {
       name: 'carrie',
-      email: 'carrie@carrie.com',
+      email: 'carrie6@carrie.com',
       password: 'testtesttest',
       password_confirmation: 'testtesttest',
       isLoading: false,
@@ -60,6 +60,7 @@ class RegisterScreen extends Component {
         console.log('There was an error');
       } else {
         console.log('successful sign up')
+        this.navigateToHomepageScreen();
       }
     }.bind(this);
       auth.register(this.state.email, this.state.password, this.state.password_confirmation, callbackFxn)

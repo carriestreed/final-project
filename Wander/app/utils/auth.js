@@ -18,14 +18,28 @@ const auth  = {
     }
 
     ajaxHelpers.register(user)
-      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+
+        const headersObj = response.headers.map;
+        const accessTokenPair = ['accessToken', headersObj['access-token'][0]];
+        const clientPair = ['client', headersObj.client[0]];
+        const uidPair = ['uid', headersObj.uid[0]];
+        console.log(accessTokenPair, clientPair, uidPair);
+
+        AsyncStorage.multiSet([accessTokenPair, clientPair, uidPair], _ => {
+          console.log('successfully added to storage');
+        })
+
+        return response.json();
+      })
       .then((responseData) => {
-        console.log('this is responseData', responseData);
+        afterSignupFxn(true);
       })
       .catch((error) => {
         console.warn('ERROR', error);
+        afterSignupFxn(false);
       })
-      .done();
     }
 
 }

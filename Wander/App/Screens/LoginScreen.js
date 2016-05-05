@@ -1,6 +1,7 @@
 'use strict'
 
 import React, {
+  AsyncStorage,
   Component,
   View,
   Text,
@@ -58,6 +59,18 @@ class LoginScreen extends Component {
     this.props.navigator.push({
       goToScreen: 'RegisterScreen',
       sceneConfig: Navigator.SceneConfigs.FloatFromBottom,
+    });
+  }
+
+  componentDidMount() {
+    const keys = ["accessToken", "client", "uid"];
+    AsyncStorage.multiGet(keys, (err, stores) => {
+     stores.map((result, i, store) => {
+       // get at each store's key/value so you can work with it
+       let key = store[i][0];
+       let value = store[i][1];
+       console.log('key', key, 'val', value);
+      });
     });
   }
 
