@@ -23,8 +23,8 @@ class RegisterScreen extends Component {
     this.state = {
       name: 'carrie',
       email: 'carrie@carrie.com',
-      password: 'test',
-      password_confirmation: 'test',
+      password: 'testtesttest',
+      password_confirmation: 'testtesttest',
       isLoading: false,
       error: false
     }

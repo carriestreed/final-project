@@ -16,7 +16,14 @@ const ajaxHelpers = {
 
   register: function(user){
     console.log('hitting register fxn in ajaxhelpers with', user);
-    // return fetch('http://localhost:3030/auth', {'method':'POST'})
+    return fetch('http://localhost:3000/auth.json', {
+      method:'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    })
   },
 
   signIn: function(afterAjaxFxn) {
