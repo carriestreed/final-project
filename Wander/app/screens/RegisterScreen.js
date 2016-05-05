@@ -94,10 +94,10 @@ class RegisterScreen extends Component {
             </Text>
 
             <TextInput
-              placeholder='Username'
+              placeholder='Email'
               placeholderTextColor='rgba(255,255,255,.6)'
               style={styles.formInput}
-              value={this.state.name}
+              value={this.state.email}
               onChange={this.handleUsername.bind(this)}
               />
 

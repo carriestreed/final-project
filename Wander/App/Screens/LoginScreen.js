@@ -21,7 +21,8 @@ class LoginScreen extends Component {
     super(props);
     this.state = {
       username: 'Carrie',
-      password: 'Testing',
+      email: 'carrie7@carrie.com',
+      password: 'testtesttest',
       isLoading: false,
       error: false,
       success: '',
@@ -88,14 +89,14 @@ class LoginScreen extends Component {
             </Text>
 
             <TextInput
-              placeholder='username'
+              placeholder='Email'
               placeholderTextColor='rgba(255,255,255,.6)'
               style={styles.formInput}
-              value={this.state.username}
+              value={this.state.email}
               onChange={this.handleUsername.bind(this)}
               />
             <TextInput
-              placeholder='password'
+              placeholder='Password'
               placeholderTextColor='rgba(255,255,255,.6)'
               style={styles.formInput}
               value={this.state.password}

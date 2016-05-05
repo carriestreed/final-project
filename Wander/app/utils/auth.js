@@ -40,6 +40,10 @@ const auth  = {
         console.warn('ERROR', error);
         afterSignupFxn(false);
       })
+    },
+
+    login(email, password, afterSignInFxn) {
+      
     }
 
 }
