@@ -8,6 +8,9 @@ import React, {
 import Test from './Test'
 import Test2 from './Test2'
 
+import HomepageScreen from '../screens/HomepageScreen';
+import PhotoFeedScreen from '../screens/PhotoFeedScreen';
+
 class TabsComponent extends Component {
 
   constructor(props){
@@ -26,7 +29,7 @@ class TabsComponent extends Component {
           title={'HOME'}
           onPress={() => console.log('home pressed')}
           >
-          <Test />
+          <HomepageScreen />
         </TabBarIOS.Item>
 
 
@@ -35,7 +38,7 @@ class TabsComponent extends Component {
           title={'FEED'}
           onPress={() => console.log('feed pressed')}
           >
-          <Test2 />
+          <PhotoFeedScreen />
         </TabBarIOS.Item>
 
 
