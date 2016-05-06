@@ -8,6 +8,7 @@ import React, {
 } from 'react-native';
 
 import StatusBarBg from '../components/StatusBarBg';
+import TabsComponent from '../components/TabsComponent';
 import LoginScreen from '../screens/LoginScreen';
 import HomepageScreen from '../screens/HomepageScreen';
 import PhotoFeedScreen from '../screens/PhotoFeedScreen';
@@ -24,6 +25,13 @@ class AppNavigator extends Component {
         case 'LoginScreen':
         return (
           <LoginScreen
+            {...globalNavigatorProps}
+          />
+        )
+
+        case 'TabsComponent':
+        return (
+          <TabsComponent
             {...globalNavigatorProps}
           />
         )
