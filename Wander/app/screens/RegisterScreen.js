@@ -84,7 +84,7 @@ class RegisterScreen extends Component {
 
           <View style={styles.formContainer}>
             <Text style={styles.title}>
-              {`Get inspired`}
+              {`Discover new places.`}
             </Text>
 
             <TextInput

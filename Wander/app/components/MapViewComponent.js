@@ -11,14 +11,26 @@ import React, {
 class MapViewComponent extends Component{
 
   render(){
+    var region = {
+         latitude: 35.6895,
+         longitude: 139.6917,
+         latitudeDelta: 0.004,
+         longitudeDelta: 0.004
+       };
+
+       var markers = [
+         {
+           latitude: 35.6895,
+           longitude: 139.6917,
+         }
+       ];
+
     return(
       <MapView
-        style = {styles.mainContainer}
-        initialRegion={{
-          latitude: 33.9628,
-          longitude: 18.4098,
-        }}
-      />
+         region={region}
+         style={styles.mainContainer}
+         annotations={markers}
+        />
     )
   }
 }
