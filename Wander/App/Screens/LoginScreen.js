@@ -21,7 +21,7 @@ class LoginScreen extends Component {
     super(props);
     this.state = {
       username: 'Carrie',
-      email: 'carrie7@carrie.com',
+      email: 'carrie11@carrie.com',
       password: 'testtesttest',
       isLoading: false,
       error: false,
@@ -42,14 +42,16 @@ class LoginScreen extends Component {
   }
 
   handleAjaxCall(){
+    console.log('handling ajax call')
     let loginCallbackFxn = function(success) {
       if (!success) {
         console.log('There was an error');
       } else {
-        console.log('successful sign up')
+        console.log('successful login')
+        this.navigateToHomepageScreen();
       }
     }.bind(this);
-      auth.register(this.state.email, this.state.password, this.state.password_confirmation, loginCallbackFxn)
+      auth.login(this.state.email, this.state.password, loginCallbackFxn)
   }
 
   navigateToHomepageScreen(){

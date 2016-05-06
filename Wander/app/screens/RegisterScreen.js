@@ -22,7 +22,7 @@ class RegisterScreen extends Component {
     super(props);
     this.state = {
       name: 'carrie',
-      email: 'carrie7@carrie.com',
+      email: 'carrie11@carrie.com',
       password: 'testtesttest',
       password_confirmation: 'testtesttest',
       isLoading: false,
