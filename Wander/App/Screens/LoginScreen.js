@@ -31,7 +31,7 @@ class LoginScreen extends Component {
 
   handleEmail(event){
     this.setState({
-      username: event.nativeEvent.text,
+      email: event.nativeEvent.text,
     });
   }
 
