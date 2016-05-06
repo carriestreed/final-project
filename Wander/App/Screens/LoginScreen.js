@@ -20,16 +20,16 @@ class LoginScreen extends Component {
   constructor(props){
     super(props);
     this.state = {
-      username: 'Carrie',
-      email: 'carrie11@carrie.com',
-      password: 'testtesttest',
+      username: '',
+      email: '',
+      password: '',
       isLoading: false,
       error: false,
       success: '',
     }
   }
 
-  handleUsername(event){
+  handleEmail(event){
     this.setState({
       username: event.nativeEvent.text,
     });
@@ -106,7 +106,7 @@ class LoginScreen extends Component {
               placeholderTextColor='rgba(255,255,255,.6)'
               style={styles.formInput}
               value={this.state.email}
-              onChange={this.handleUsername.bind(this)}
+              onChange={this.handleEmail.bind(this)}
               />
             <TextInput
               placeholder='Password'
