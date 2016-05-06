@@ -97,6 +97,7 @@ class RegisterScreen extends Component {
 
             <TextInput
               placeholder='Password'
+              secureTextEntry='true'
               placeholderTextColor='rgba(255,255,255,.6)'
               style={styles.formInput}
               value={this.state.password}
@@ -105,6 +106,7 @@ class RegisterScreen extends Component {
 
             <TextInput
               placeholder='Confirm Password'
+              secureTextEntry='true'
               placeholderTextColor='rgba(255,255,255,.6)'
               style={styles.formInput}
               value={this.state.password_confirmation}
