@@ -17,12 +17,21 @@ import ajaxHelpers from '../utils/ajaxHelpers';
 
 class PhotoInfoScreen extends Component {
 
-  componentDidMount(){
+  constructor(props){
+    super(props)
+    this.state = {
+      photoId: this.props.photoId,
+      photoUri: this.props.photoUri,
+    }
+  }
+
+  componentWillMount(){
     let photoId = this.state.photoId;
 
     ajaxHelpers.getPhotoInfo(photoId)
     .then((response) => response.json())
     .then((responseData) => {
+      console.log('returning ajax', responseData)
       this.setState({
         title: responseData.photo.title._content,
         realname: responseData.photo.owner.realname,
@@ -31,28 +40,13 @@ class PhotoInfoScreen extends Component {
         lat: responseData.photo.location.latitude,
         lon: responseData.photo.location.longitude,
       })
-      this.renderPhotoDescription()
     })
     .done();
   }
 
-  constructor(props){
-    super(props)
-    this.state = {
-      photoId: this.props.photoId,
-      photoUri: this.props.photoUri,
-      title: '',
-      author: '',
-      description: '',
-      realname: '',
-      username: '',
-      lat: '',
-      lon: '',
-    }
-  }
-
 
   renderPhotoDescription(){
+    console.log('photo info screen', this.state.lat)
     return(
       <ScrollView>
         <Image
@@ -70,15 +64,18 @@ class PhotoInfoScreen extends Component {
 
           {`\n`}{this.state.description}
         </Text>
+
         <MapViewComponent
+          title={this.state.title}
           lat={this.state.lat}
-          lon={this.state.lon}
-        />
+          lon={this.state.lon}/>
+
       </ScrollView>
     )
   }
 
   render(){
+    console.log('RENDERING EVERYTHING')
     return (
       <ViewContainer>
         <StatusBarBg />

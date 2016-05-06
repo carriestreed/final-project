@@ -10,15 +10,9 @@ import React, {
 
 class MapViewComponent extends Component{
 
-  componentWillReceiveProps(){
-    console.log('lat', this.props.lat)
-    console.log('lon', this.props.lon)
-
-    this.setState({
-      lat: this.props.lat,
-      lon: this.props.lon
-    })
-  }
+  componentWillMount(){
+    console.log(this.props.title)
+    }
 
   constructor(props){
     super(props)
