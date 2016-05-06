@@ -5,11 +5,13 @@ import React, {
   TabBarIOS,
 } from 'react-native';
 
+
 import Test from './Test'
 import Test2 from './Test2'
 
 import HomepageScreen from '../screens/HomepageScreen';
 import PhotoFeedScreen from '../screens/PhotoFeedScreen';
+import AppNavigator from '../navigation/AppNavigator';
 
 class TabsComponent extends Component {
 
@@ -29,7 +31,8 @@ class TabsComponent extends Component {
           title={'HOME'}
           onPress={() => console.log('home pressed')}
           >
-          <HomepageScreen />
+          <AppNavigator
+            initialRoute={{goToScreen: 'HomepageScreen'}}/>
         </TabBarIOS.Item>
 
 
@@ -38,7 +41,8 @@ class TabsComponent extends Component {
           title={'FEED'}
           onPress={() => console.log('feed pressed')}
           >
-          <PhotoFeedScreen />
+          <AppNavigator
+            initialRoute={{goToScreen: 'PhotoFeedScreen'}}/>
         </TabBarIOS.Item>
 
 
