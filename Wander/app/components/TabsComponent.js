@@ -38,7 +38,7 @@ class TabsComponent extends Component {
 
         <TabBarIOS.Item
           selected={this.state.selectedTab === 'feed'}
-          title={'FEED'}
+          title={'FEATURED'}
           onPress={() => console.log('feed pressed')}
           >
           <AppNavigator
