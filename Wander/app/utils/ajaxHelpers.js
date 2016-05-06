@@ -26,8 +26,16 @@ const ajaxHelpers = {
     })
   },
 
-  signIn: function(afterAjaxFxn) {
-    console.log('hitting sign in fxn in ajaxhelpers');
+  login: function(user) {
+    console.log('hitting login fxn in ajaxhelpers', user);
+    return fetch('http://localhost:3000/auth/sign_in', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    })
   },
 
 }

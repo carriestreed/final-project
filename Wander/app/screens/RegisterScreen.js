@@ -21,20 +21,14 @@ class RegisterScreen extends Component {
   constructor(props){
     super(props);
     this.state = {
-      name: 'carrie',
-      email: 'carrie199@carrie.com',
-      password: 'testtesttest',
-      password_confirmation: 'testtesttest',
+      email: '',
+      password: '',
+      password_confirmation: '',
       isLoading: false,
       error: false
     }
   }
 
-  handleUsername(event){
-    this.setState({
-      name: event.nativeEvent.text,
-    });
-  }
 
   handleEmail(event){
     this.setState({
@@ -94,11 +88,11 @@ class RegisterScreen extends Component {
             </Text>
 
             <TextInput
-              placeholder='Username'
+              placeholder='Email'
               placeholderTextColor='rgba(255,255,255,.6)'
               style={styles.formInput}
-              value={this.state.name}
-              onChange={this.handleUsername.bind(this)}
+              value={this.state.email}
+              onChange={this.handleEmail.bind(this)}
               />
 
             <TextInput

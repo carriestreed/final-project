@@ -20,17 +20,18 @@ class LoginScreen extends Component {
   constructor(props){
     super(props);
     this.state = {
-      username: 'Carrie',
-      password: 'Testing',
+      username: '',
+      email: '',
+      password: '',
       isLoading: false,
       error: false,
       success: '',
     }
   }
 
-  handleUsername(event){
+  handleEmail(event){
     this.setState({
-      username: event.nativeEvent.text,
+      email: event.nativeEvent.text,
     });
   }
 
@@ -38,6 +39,19 @@ class LoginScreen extends Component {
     this.setState({
       password: event.nativeEvent.text,
     });
+  }
+
+  handleAjaxCall(){
+    console.log('handling ajax call')
+    let loginCallbackFxn = function(success) {
+      if (!success) {
+        console.log('There was an error');
+      } else {
+        console.log('successful login')
+        this.navigateToHomepageScreen();
+      }
+    }.bind(this);
+      auth.login(this.state.email, this.state.password, loginCallbackFxn)
   }
 
   navigateToHomepageScreen(){
@@ -88,14 +102,14 @@ class LoginScreen extends Component {
             </Text>
 
             <TextInput
-              placeholder='username'
+              placeholder='Email'
               placeholderTextColor='rgba(255,255,255,.6)'
               style={styles.formInput}
-              value={this.state.username}
-              onChange={this.handleUsername.bind(this)}
+              value={this.state.email}
+              onChange={this.handleEmail.bind(this)}
               />
             <TextInput
-              placeholder='password'
+              placeholder='Password'
               placeholderTextColor='rgba(255,255,255,.6)'
               style={styles.formInput}
               value={this.state.password}
@@ -104,7 +118,7 @@ class LoginScreen extends Component {
 
             <TouchableHighlight
               style={styles.submitBtn}
-              onPress={this.navigateToHomepageScreen.bind(this)}
+              onPress={this.handleAjaxCall.bind(this)}
               underlayColor='rgba(24, 125, 173, 0.8)'>
               <Text style={styles.btnText}>
                 {`Login`}
