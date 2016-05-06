@@ -21,8 +21,8 @@ class LoginScreen extends Component {
     super(props);
     this.state = {
       username: '',
-      email: '',
-      password: '',
+      email: 'Carrie@gmail.com',
+      password: 'Password',
       isLoading: false,
       error: false,
       success: '',
@@ -72,7 +72,6 @@ class LoginScreen extends Component {
     });
     this.props.navigator.push({
       goToScreen: 'RegisterScreen',
-      sceneConfig: Navigator.SceneConfigs.FloatFromBottom,
     });
   }
 

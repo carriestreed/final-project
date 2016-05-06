@@ -79,12 +79,12 @@ class RegisterScreen extends Component {
     return (
       <View style={styles.mainContainer}>
         <Image
-          source={require('../images/yosemite2.jpg')}
+          source={require('../images/bolivia.jpg')}
           style={styles.bgImage} >
 
           <View style={styles.formContainer}>
             <Text style={styles.title}>
-              {`Get ready to be inspired`}
+              {`Get inspired`}
             </Text>
 
             <TextInput
@@ -114,7 +114,7 @@ class RegisterScreen extends Component {
             <TouchableHighlight
               style={styles.submitBtn}
               onPress={this.handleAjaxCall.bind(this)}
-              underlayColor='rgba(24, 125, 173, 0.8)'>
+              underlayColor='rgba(138, 11, 86, 0.9)'>
               <Text style={styles.btnText}>
                 {`Register`}
               </Text>
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
       resizeMode: 'cover',
     },
     formContainer: {
-      marginTop: 120,
+      marginTop: 130,
       margin: 20,
     },
     title: {
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
       textShadowRadius: 5,
       marginBottom: 100,
       textAlign: 'center',
-      color: 'rgba(255,255,255,.9)'
+      color: 'rgba(255,255,255,.8)'
     },
     formInput: {
       fontFamily: 'NewsCycle-Bold',
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
     submitBtn: {
       height: 50,
       flexDirection: 'row',
-      backgroundColor: 'rgba(8, 47, 66, 0.9)',
+      backgroundColor: 'rgba(82, 6, 51, 0.9)',
       borderColor: 'rgba(0,0,0,.1)',
       borderWidth: 1,
       borderRadius: 6,
