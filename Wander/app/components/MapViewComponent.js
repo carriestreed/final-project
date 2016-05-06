@@ -10,21 +10,11 @@ import React, {
 
 class MapViewComponent extends Component{
 
-  componentWillReceiveProps(){
-    console.log('lat', this.props.lat)
-    console.log('lon', this.props.lon)
-
-    this.setState({
-      lat: this.props.lat,
-      lon: this.props.lon
-    })
-  }
-
   constructor(props){
     super(props)
     this.state = {
-      lat: '',
-      lon: '',
+      lat: 35.6895,
+      lon: 139.6917
     }
   }
 
@@ -32,8 +22,8 @@ class MapViewComponent extends Component{
     var region = {
      latitude: this.state.lat,
      longitude: this.state.lon,
-     latitudeDelta: 0.004,
-     longitudeDelta: 0.004
+     latitudeDelta: 0.014,
+     longitudeDelta: 0.014
    };
 
    var markers = [
