@@ -10,27 +10,45 @@ import React, {
 
 class MapViewComponent extends Component{
 
+  componentWillReceiveProps(){
+    console.log('lat', this.props.lat)
+    console.log('lon', this.props.lon)
+
+    this.setState({
+      lat: this.props.lat,
+      lon: this.props.lon
+    })
+  }
+
+  constructor(props){
+    super(props)
+    this.state = {
+      lat: '',
+      lon: '',
+    }
+  }
+
   render(){
     var region = {
-         latitude: 35.6895,
-         longitude: 139.6917,
-         latitudeDelta: 0.004,
-         longitudeDelta: 0.004
-       };
+     latitude: this.state.lat,
+     longitude: this.state.lon,
+     latitudeDelta: 0.004,
+     longitudeDelta: 0.004
+   };
 
-       var markers = [
-         {
-           latitude: 35.6895,
-           longitude: 139.6917,
-         }
-       ];
+   var markers = [
+     {
+      latitude: this.state.lat,
+      longitude: this.state.lon,
+     }
+   ];
 
-    return(
-      <MapView
-         region={region}
-         style={styles.mainContainer}
-         annotations={markers}
-        />
+  return(
+    <MapView
+       region={region}
+       style={styles.mainContainer}
+       annotations={markers}
+      />
     )
   }
 }

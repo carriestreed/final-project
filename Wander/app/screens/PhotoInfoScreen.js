@@ -46,6 +46,8 @@ class PhotoInfoScreen extends Component {
       description: '',
       realname: '',
       username: '',
+      lat: '',
+      lon: '',
     }
   }
 
@@ -68,7 +70,10 @@ class PhotoInfoScreen extends Component {
 
           {`\n`}{this.state.description}
         </Text>
-        <MapViewComponent/>
+        <MapViewComponent
+          lat={this.state.lat}
+          lon={this.state.lon}
+        />
       </ScrollView>
     )
   }
