@@ -65,7 +65,7 @@ class RegisterScreen extends Component {
       isLoading: true
     });
     this.props.navigator.push({
-      goToScreen: 'HomepageScreen',
+      goToScreen: 'TabsComponent',
       sceneConfig: Navigator.SceneConfigs.FloatFromBottom,
       name: this.state.name,
       email: this.state.email,

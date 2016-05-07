@@ -19,14 +19,14 @@ class MapViewComponent extends Component{
   }
 
   render(){
-    var region = {
+    let region = {
      latitude: this.state.lat,
      longitude: this.state.lon,
      latitudeDelta: 0.014,
      longitudeDelta: 0.014
    };
 
-   var markers = [
+   let markers = [
      {
       latitude: this.state.lat,
       longitude: this.state.lon,
