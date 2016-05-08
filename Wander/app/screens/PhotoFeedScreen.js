@@ -15,7 +15,7 @@ import React, {
 
 import StatusBarBg from '../components/StatusBarBg';
 import ViewContainer from '../components/ViewContainer';
-import PhotoFeedSearchComponent from '../components/PhotoFeedSearchComponent';
+import SearchBarComponent from '../components/SearchBarComponent';
 
 
 class PhotoFeedScreen extends Component {
@@ -72,7 +72,7 @@ class PhotoFeedScreen extends Component {
     return (
       <ViewContainer>
         <StatusBarBg />
-        <PhotoFeedSearchComponent />
+        <SearchBarComponent />
         <ListView
           style={styles.mainContainer}
           dataSource={this.state.photoDataSource}

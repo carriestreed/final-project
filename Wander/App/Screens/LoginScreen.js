@@ -101,7 +101,7 @@ class LoginScreen extends Component {
             </Text>
 
             <TextInput
-              placeholder='Email'
+              placeholder={`Email`}
               placeholderTextColor='rgba(255,255,255,.6)'
               style={styles.formInput}
               value={this.state.email}
@@ -113,7 +113,7 @@ class LoginScreen extends Component {
               style={styles.formInput}
               value={this.state.password}
               onChange={this.handlePassword.bind(this)}
-              secureTextEntry='true'
+              secureTextEntry={true}
               />
 
             <TouchableHighlight
