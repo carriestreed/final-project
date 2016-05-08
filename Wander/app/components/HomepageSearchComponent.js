@@ -47,7 +47,6 @@ class HomepageSearchComponent extends Component {
   navigateToPhotoFeedScreen(){
     this.setState({
       isLoading: true,
-      countrySearch: this.state.countrySearch
     });
     this.props.navigator.push({
       goToScreen: 'PhotoFeedScreen',

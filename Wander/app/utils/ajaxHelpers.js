@@ -7,7 +7,11 @@ const ajaxHelpers = {
   baseUrl: 'http://localhost:3000',
 
   callCountry: function(userInput){
-    return fetch('https://api.flickr.com/services/rest/?format=json&nojsoncallback=1&method=flickr.photos.search&api_key=' + API_KEY + '&sort=interestingness-desc&group_id=13197975%40N00&has_geo=1&tags=' + userInput, {'method': 'GET'})
+    return fetch('https://api.flickr.com/services/rest/?format=json&nojsoncallback=1&method=flickr.photos.search&api_key=' + API_KEY + '&sort=date-posted-desc&group_id=13197975%40N00&has_geo=1&tags=' + userInput, {'method': 'GET'})
+  },
+
+  callFeatured: function(){
+    return fetch('https://api.flickr.com/services/rest/?format=json&nojsoncallback=1&method=flickr.photos.search&api_key=' + API_KEY + '&sort=interestingness-desc&group_id=13197975%40N00&has_geo=1', {'method': 'GET'})
   },
 
   getPhotoInfo: function(photoId){
