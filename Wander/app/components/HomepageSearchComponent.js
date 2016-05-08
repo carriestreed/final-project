@@ -50,7 +50,7 @@ class HomepageSearchComponent extends Component {
     });
     this.props.navigator.push({
       goToScreen: 'PhotoFeedScreen',
-      countrySearch: this.state.ajaxReturn
+      countrySearch: this.state.ajaxReturn,
     });
   }
 
@@ -104,7 +104,6 @@ const styles=StyleSheet.create({
   formContainer: {
     margin: 20,
     marginTop: 120,
-    // backgroundColor: 'rgba(0,0,0,.5)',
     borderRadius: 4,
     padding: 10,
   },

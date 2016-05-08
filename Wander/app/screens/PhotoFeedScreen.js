@@ -32,6 +32,7 @@ class PhotoFeedScreen extends Component {
       photoDataSource: ds.cloneWithRows(photo),
       isLoading: 'false',
       error: 'false',
+      selected: 'featured'
     }
   }
 
