@@ -20,14 +20,12 @@ class TabsComponent extends Component {
   }
 
   selectedHome(){
-    console.log('selecting home')
     this.setState({
       selectedTab: 'home'
     });
   }
 
   selectedFeatured(){
-    console.log('in JAPAN ajax call fxn')
     ajaxHelpers.callFeatured()
     .then((response) => response.json())
     .then((responseData) => {
@@ -51,7 +49,8 @@ class TabsComponent extends Component {
           onPress={this.selectedHome.bind(this)}
           >
           <AppNavigator
-            initialRoute={{goToScreen:'HomepageScreen'}}
+            initialRoute={{
+              goToScreen:'HomepageScreen'}}
             />
         </Icon.TabBarItemIOS>
 
