@@ -5,45 +5,68 @@ import React, {
   TabBarIOS,
 } from 'react-native';
 
-
-import Test from './Test'
-import Test2 from './Test2'
-
-import HomepageScreen from '../screens/HomepageScreen';
-import PhotoFeedScreen from '../screens/PhotoFeedScreen';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import AppNavigator from '../navigation/AppNavigator';
+import ajaxHelpers from '../utils/ajaxHelpers';
 
 class TabsComponent extends Component {
 
   constructor(props){
     super(props)
     this.state = {
+      ajaxReturn: [],
       selectedTab: 'home'
     }
+  }
+
+  selectedHome(){
+    this.setState({
+      selectedTab: 'home'
+    });
+  }
+
+  selectedFeatured(){
+    ajaxHelpers.callFeatured()
+    .then((response) => response.json())
+    .then((responseData) => {
+      this.setState({
+        isLoading: true,
+        ajaxReturn: responseData,
+        selectedTab: 'featured'
+      })
+    })
+    .done();
   }
 
   render(){
     return (
       <TabBarIOS selectedTab={this.state.selectedTab}>
 
-        <TabBarIOS.Item
+        <Icon.TabBarItemIOS
           selected={this.state.selectedTab === 'home'}
           title={'HOME'}
-          onPress={() => console.log('home pressed')}
+          iconName="home"
+          onPress={this.selectedHome.bind(this)}
           >
           <AppNavigator
-            initialRoute={{goToScreen: 'HomepageScreen'}}/>
-        </TabBarIOS.Item>
+            initialRoute={{
+              goToScreen:'HomepageScreen'}}
+            />
+        </Icon.TabBarItemIOS>
 
 
-        <TabBarIOS.Item
-          selected={this.state.selectedTab === 'feed'}
+        <Icon.TabBarItemIOS
+          selected={this.state.selectedTab === 'featured'}
           title={'FEATURED'}
-          onPress={() => console.log('feed pressed')}
+          iconName="star"
+          onPress={this.selectedFeatured.bind(this)}
           >
           <AppNavigator
-            initialRoute={{goToScreen: 'PhotoFeedScreen'}}/>
-        </TabBarIOS.Item>
+            initialRoute={{
+              goToScreen:'PhotoFeedScreen',
+              countrySearch: this.state.ajaxReturn}}
+            />
+        </Icon.TabBarItemIOS>
 
 
       </TabBarIOS>

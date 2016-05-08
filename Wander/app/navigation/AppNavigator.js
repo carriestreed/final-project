@@ -47,10 +47,6 @@ class AppNavigator extends Component {
         return (
           <HomepageScreen
             {...globalNavigatorProps}
-            name={route.name}
-            email={route.email}
-            password={route.password}
-            password_confirmation={route.password_confirmation}
           />
         )
 
@@ -59,6 +55,7 @@ class AppNavigator extends Component {
           <PhotoFeedScreen
             {...globalNavigatorProps}
             countrySearch={route.countrySearch}
+            selectedTab={`home`}
           />
         )
 

@@ -47,11 +47,10 @@ class HomepageSearchComponent extends Component {
   navigateToPhotoFeedScreen(){
     this.setState({
       isLoading: true,
-      countrySearch: this.state.countrySearch
     });
     this.props.navigator.push({
       goToScreen: 'PhotoFeedScreen',
-      countrySearch: this.state.ajaxReturn
+      countrySearch: this.state.ajaxReturn,
     });
   }
 
@@ -105,7 +104,6 @@ const styles=StyleSheet.create({
   formContainer: {
     margin: 20,
     marginTop: 120,
-    // backgroundColor: 'rgba(0,0,0,.5)',
     borderRadius: 4,
     padding: 10,
   },
