@@ -34,12 +34,10 @@ class PhotoFeedScreen extends Component {
   }
 
   navigateToPhotoInfoScreen(photoData){
-
     let photoId = photoData.id;
     ajaxHelpers.getPhotoInfo(photoId)
     .then((response) => response.json())
     .then((responseData) => {
-      console.log('returning ajaxxx earlier', responseData)
 
       this.props.navigator.push({
         goToScreen: 'PhotoInfoScreen',

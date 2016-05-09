@@ -18,13 +18,12 @@ import ajaxHelpers from '../utils/ajaxHelpers';
 class PhotoInfoScreen extends Component {
 
   renderPhotoDescription(){
-    console.log('photo info screen', this.props.lat)
     return(
       <ScrollView>
         <Image
           style={styles.photo}
-          source={{uri:this.props.photoUri}}
-        />
+          source={{uri:this.props.photoUri}} />
+
         <Text style={styles.dataText}>
           <Text style={styles.dataTitle}>
             {this.props.title}
@@ -39,15 +38,13 @@ class PhotoInfoScreen extends Component {
 
         <MapViewComponent
           lat={this.props.lat}
-          lon={this.props.lon}
-          />
+          lon={this.props.lon} />
 
       </ScrollView>
     )
   }
 
   render(){
-    console.log('RENDERING EVERYTHING')
     return (
       <ViewContainer>
         <StatusBarBg />
