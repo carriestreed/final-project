@@ -23,11 +23,12 @@ class PhotoFeedScreen extends Component {
   constructor(props){
     super(props)
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 != r2});
-    let photo = this.props.countrySearch.photos.photo;
+    let photo = (this.props.countrySearch.photos.photo);
     this.state = {
       photoDataSource: ds.cloneWithRows(photo),
       isLoading: 'false',
       error: 'false',
+      selected: 'featured'
     }
   }
 

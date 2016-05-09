@@ -17,20 +17,20 @@ class MapViewComponent extends Component{
   constructor(props){
     super(props)
     this.state = {
-      lat: '',
-      lon: '',
+      lat: 35.6895,
+      lon: 139.6917
     }
   }
 
   render(){
-    var region = {
+    let region = {
      latitude: this.state.lat,
      longitude: this.state.lon,
-     latitudeDelta: 0.004,
-     longitudeDelta: 0.004
+     latitudeDelta: 0.014,
+     longitudeDelta: 0.014
    };
 
-   var markers = [
+   let markers = [
      {
       latitude: this.state.lat,
       longitude: this.state.lon,

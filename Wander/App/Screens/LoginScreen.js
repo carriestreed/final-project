@@ -59,7 +59,7 @@ class LoginScreen extends Component {
       isLoading: true
     });
     this.props.navigator.push({
-      goToScreen: 'HomepageScreen',
+      goToScreen: 'TabsComponent',
       sceneConfig: Navigator.SceneConfigs.FloatFromBottom,
       username: this.state.username,
       password: this.state.password
@@ -79,7 +79,7 @@ class LoginScreen extends Component {
     const keys = ["accessToken", "client", "uid"];
     AsyncStorage.multiGet(keys, (err, stores) => {
      stores.map((result, i, store) => {
-       // get at each store's key/value so you can work with it
+       // get at each store's key/value so can work with it
        let key = store[i][0];
        let value = store[i][1];
        console.log('key', key, 'val', value);
@@ -113,6 +113,7 @@ class LoginScreen extends Component {
               style={styles.formInput}
               value={this.state.password}
               onChange={this.handlePassword.bind(this)}
+              secureTextEntry={true}
               />
 
             <TouchableHighlight

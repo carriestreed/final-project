@@ -8,6 +8,7 @@ import React, {
 } from 'react-native';
 
 import StatusBarBg from '../components/StatusBarBg';
+import TabsComponent from '../components/TabsComponent';
 import LoginScreen from '../screens/LoginScreen';
 import HomepageScreen from '../screens/HomepageScreen';
 import PhotoFeedScreen from '../screens/PhotoFeedScreen';
@@ -28,6 +29,13 @@ class AppNavigator extends Component {
           />
         )
 
+        case 'TabsComponent':
+        return (
+          <TabsComponent
+            {...globalNavigatorProps}
+          />
+        )
+
         case 'RegisterScreen':
         return (
           <RegisterScreen
@@ -39,10 +47,6 @@ class AppNavigator extends Component {
         return (
           <HomepageScreen
             {...globalNavigatorProps}
-            name={route.name}
-            email={route.email}
-            password={route.password}
-            password_confirmation={route.password_confirmation}
           />
         )
 
@@ -51,6 +55,7 @@ class AppNavigator extends Component {
           <PhotoFeedScreen
             {...globalNavigatorProps}
             countrySearch={route.countrySearch}
+            selectedTab={`home`}
           />
         )
 
