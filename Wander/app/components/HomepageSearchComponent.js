@@ -8,6 +8,7 @@ import React, {
   View,
   TextInput,
   TouchableHighlight,
+  Navigator,
 } from 'react-native';
 
 import ajaxHelpers from '../utils/ajaxHelpers';
@@ -51,6 +52,7 @@ class HomepageSearchComponent extends Component {
     this.props.navigator.push({
       goToScreen: 'PhotoFeedScreen',
       countrySearch: this.state.ajaxReturn,
+      sceneConfig: Navigator.SceneConfigs.FloatFromRight,
     });
   }
 
