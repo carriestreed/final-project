@@ -29,6 +29,7 @@
 		418A9F581CD709F500F50893 /* NewsCycle-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 418A9F571CD709F500F50893 /* NewsCycle-Bold.ttf */; };
 		418A9F591CD70AE700F50893 /* NewsCycle.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 418A9F4B1CD7003E00F50893 /* NewsCycle.ttf */; };
 		418A9F5A1CD70AEA00F50893 /* NewsCycle-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 418A9F571CD709F500F50893 /* NewsCycle-Bold.ttf */; };
+		41AC55281CE0E5CC00BE17F2 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 41AC55271CE0E5CC00BE17F2 /* main.jsbundle */; };
 		44F6A967B6AE4DD6964BFC70 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9D6FB27BD84E8DADC63A2B /* libRNVectorIcons.a */; };
 		8129390D66094C1FB936EEFE /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1355AF0F9EF5479E9F332FAE /* Foundation.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
@@ -133,7 +134,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
 		00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTGeolocation.xcodeproj; path = "../node_modules/react-native/Libraries/Geolocation/RCTGeolocation.xcodeproj"; sourceTree = "<group>"; };
 		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
@@ -157,6 +157,7 @@
 		3990974F19CB4B81982D015D /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		418A9F4B1CD7003E00F50893 /* NewsCycle.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NewsCycle.ttf; path = "/Library/Fonts/google fonts/News_Cycle/NewsCycle.ttf"; sourceTree = "<absolute>"; };
 		418A9F571CD709F500F50893 /* NewsCycle-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewsCycle-Bold.ttf"; sourceTree = "<group>"; };
+		41AC55271CE0E5CC00BE17F2 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		484D73D4D6F04D7784FB3C9C /* AirMaps.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AirMaps.xcodeproj; path = "../node_modules/react-native-maps/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; };
 		5EC5FA7E8F074ACC8C135FBC /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		5FA3F571633C4D89A3C51C41 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
@@ -276,11 +277,10 @@
 		13B07FAE1A68108700A75B9A /* Wander */ = {
 			isa = PBXGroup;
 			children = (
+				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				418A9F571CD709F500F50893 /* NewsCycle-Bold.ttf */,
 				418A9F4B1CD7003E00F50893 /* NewsCycle.ttf */,
-				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
-				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -351,6 +351,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				41AC55271CE0E5CC00BE17F2 /* main.jsbundle */,
 				13B07FAE1A68108700A75B9A /* Wander */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* WanderTests */,
@@ -620,6 +621,7 @@
 				C0F8D58436414FDF9FEEE6C3 /* Ionicons.ttf in Resources */,
 				08406F9A92184A44B6FA202A /* MaterialIcons.ttf in Resources */,
 				F75B476F550E467BBFDF3C08 /* Octicons.ttf in Resources */,
+				41AC55281CE0E5CC00BE17F2 /* main.jsbundle in Resources */,
 				34A30AD8854042668780B8FF /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -809,7 +811,7 @@
 					"$(SRCROOT)/../node_modules/react-native-maps/ios/AirMaps/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -851,7 +853,7 @@
 					"$(SRCROOT)/../node_modules/react-native-maps/ios/AirMaps/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
