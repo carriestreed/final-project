@@ -10,7 +10,6 @@ import React, {
 } from 'react-native';
 
 import StatusBarBg from '../components/StatusBarBg';
-import SearchBarComponent from '../components/SearchBarComponent';
 import ViewContainer from '../components/ViewContainer';
 import MapViewComponent from '../components/MapViewComponent';
 import ajaxHelpers from '../utils/ajaxHelpers';
@@ -82,7 +81,6 @@ class PhotoInfoScreen extends Component {
     return (
       <ViewContainer>
         <StatusBarBg />
-        <SearchBarComponent />
         {this.renderPhotoDescription()}
       </ViewContainer>
     )

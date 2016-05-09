@@ -13,10 +13,7 @@ import React, {
   Navigator,
 } from 'react-native';
 
-import StatusBarBg from '../components/StatusBarBg';
 import ViewContainer from '../components/ViewContainer';
-import SearchBarComponent from '../components/SearchBarComponent';
-
 
 class PhotoFeedScreen extends Component {
 
@@ -68,11 +65,10 @@ class PhotoFeedScreen extends Component {
     )
   }
 
+
   render(){
     return (
       <ViewContainer>
-        <StatusBarBg />
-        <SearchBarComponent />
         <ListView
           style={styles.mainContainer}
           dataSource={this.state.photoDataSource}
@@ -98,6 +94,11 @@ const styles=StyleSheet.create({
     marginBottom: 40,
     marginTop: -8,
     margin: 3,
+  },
+  search: {
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 });
 

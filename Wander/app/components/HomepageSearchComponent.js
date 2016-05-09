@@ -49,7 +49,7 @@ class HomepageSearchComponent extends Component {
       isLoading: true,
     });
     this.props.navigator.push({
-      goToScreen: 'PhotoFeedScreen',
+      goToScreen: 'SearchBarComponent',
       countrySearch: this.state.ajaxReturn,
     });
   }

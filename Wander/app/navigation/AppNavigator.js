@@ -14,7 +14,7 @@ import HomepageScreen from '../screens/HomepageScreen';
 import PhotoFeedScreen from '../screens/PhotoFeedScreen';
 import PhotoInfoScreen from '../screens/PhotoInfoScreen';
 import RegisterScreen from '../screens/RegisterScreen';
-
+import SearchBarComponent from '../components/SearchBarComponent';
 
 class AppNavigator extends Component {
 
@@ -55,8 +55,15 @@ class AppNavigator extends Component {
           <PhotoFeedScreen
             {...globalNavigatorProps}
             countrySearch={route.countrySearch}
-            selectedTab={`home`}
           />
+        )
+
+        case 'SearchBarComponent':
+        return (
+          <SearchBarComponent
+            {...globalNavigatorProps}
+            countrySearch={route.countrySearch}
+            />
         )
 
         case 'PhotoInfoScreen':
