@@ -17,8 +17,8 @@ import ViewContainer from '../components/ViewContainer';
 
 class PhotoFeedScreen extends Component {
 
-  componentDidMount(){
-    console.log('ajax return', this.props.countrySearch);
+  componentDidUpdate(){
+    console.log('ajax returnNNN', this.props.countrySearch);
   }
 
   constructor(props){

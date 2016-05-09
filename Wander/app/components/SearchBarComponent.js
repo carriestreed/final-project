@@ -5,6 +5,7 @@ import React, {
   View,
   Text,
   StyleSheet,
+  Navigator,
 } from 'react-native';
 
 import StatusBarBg from '../components/StatusBarBg';
