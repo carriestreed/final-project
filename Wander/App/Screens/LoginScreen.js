@@ -113,7 +113,7 @@ class LoginScreen extends Component {
               style={styles.formInput}
               value={this.state.password}
               onChange={this.handlePassword.bind(this)}
-              secureTextEntry='true'
+              secureTextEntry={true}
               />
 
             <TouchableHighlight
