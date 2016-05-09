@@ -44,7 +44,6 @@ class FeaturedComponent extends Component {
   }
 
   handleAjaxCall(){
-    console.log('searching for', this.state.countrySearch)
     let userInput = this.state.countrySearch;
     ajaxHelpers.callCountry(userInput)
     .then((response) => response.json())
@@ -58,7 +57,6 @@ class FeaturedComponent extends Component {
   }
 
   navigateToPhotoFeedScreen(){
-    console.log('navigatingggg', this.state.ajaxReturn)
     this.setState({
       isLoading: true,
     });
@@ -131,10 +129,7 @@ const styles=StyleSheet.create({
     marginTop: 25,
     margin: 5,
     marginBottom: -10,
-    color: 'rgba(255,255,255,.9)',
-    textShadowColor: 'rgba(0,0,0,.5)',
-    textShadowOffset: {width: -1, height: -1},
-    textShadowRadius: 1,
+    color: 'rgba(170, 170, 170, 0.9)',
   },
   text: {
     margin: 5,
