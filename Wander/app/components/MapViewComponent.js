@@ -11,16 +11,16 @@ class MapViewComponent extends Component{
 
   render(){
     let region = {
-     latitude: this.props.lat,
-     longitude: this.props.lon,
+     latitude: parseFloat(this.props.lat),
+     longitude: parseFloat(this.props.lon),
      latitudeDelta: 0.200,
      longitudeDelta: 0.200
    };
 
     let markers = [
      {
-      latitude: this.props.lat,
-      longitude: this.props.lon,
+      latitude: parseFloat(this.props.lat),
+      longitude: parseFloat(this.props.lon),
      }
    ];
 

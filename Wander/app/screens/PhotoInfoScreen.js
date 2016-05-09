@@ -48,7 +48,6 @@ class PhotoInfoScreen extends Component {
     return (
       <ViewContainer>
         <StatusBarBg />
-        <PhotoFeedSearchComponent />
         {this.renderPhotoDescription()}
       </ViewContainer>
     )

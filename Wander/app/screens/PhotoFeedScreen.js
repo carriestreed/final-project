@@ -78,7 +78,6 @@ class PhotoFeedScreen extends Component {
     return (
       <ViewContainer>
         <StatusBarBg />
-        <PhotoFeedSearchComponent />
         <ListView
           style={styles.mainContainer}
           dataSource={this.state.photoDataSource}

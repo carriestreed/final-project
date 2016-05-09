@@ -58,7 +58,6 @@ class FeaturedComponent extends Component {
   }
 
   navigateToPhotoFeedScreen(){
-    console.log('navigatingggg', this.state.ajaxReturn)
     this.setState({
       isLoading: true,
     });
@@ -126,15 +125,12 @@ const styles=StyleSheet.create({
     marginTop: 10
   },
   featured: {
-    fontSize: 28,
+    fontSize: 25,
     fontFamily: 'NewsCycle-Bold',
     marginTop: 25,
     margin: 5,
     marginBottom: -10,
-    color: 'rgba(255,255,255,.9)',
-    textShadowColor: 'rgba(0,0,0,.5)',
-    textShadowOffset: {width: -1, height: -1},
-    textShadowRadius: 1,
+    color: 'rgba(147, 147, 147, 0.9)',
   },
   text: {
     margin: 5,

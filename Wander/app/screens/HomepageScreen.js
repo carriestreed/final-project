@@ -29,7 +29,7 @@ class HomepageScreen extends Component {
 
   render(){
     return (
-      <ViewContainer >
+      <ViewContainer>
         <StatusBarBg />
         <ScrollView>
           {this.hpContent()}
