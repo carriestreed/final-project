@@ -10,30 +10,31 @@ import React, {
 
 class MapViewComponent extends Component{
 
-  componentWillMount(){
-    console.log(this.props.title)
+  componentDidMount(){
+    console.log('in map view', this.props.lat)
+    console.log('in map view', this.props.lon)
     }
 
   constructor(props){
     super(props)
     this.state = {
-      lat: 35.6895,
-      lon: 139.6917
+      lat: this.props.lat,
+      lon: this.props.lon
     }
   }
 
   render(){
     let region = {
-     latitude: this.state.lat,
-     longitude: this.state.lon,
-     latitudeDelta: 0.014,
-     longitudeDelta: 0.014
+     latitude: this.props.lat,
+     longitude: this.props.lon,
+     latitudeDelta: 0.024,
+     longitudeDelta: 0.024
    };
 
    let markers = [
      {
-      latitude: this.state.lat,
-      longitude: this.state.lon,
+      latitude: this.props.lat,
+      longitude: this.props.lon,
      }
    ];
 
@@ -52,7 +53,6 @@ const styles = StyleSheet.create({
     height: 600,
     width: 414,
     marginTop: 20,
-
   }
 })
 

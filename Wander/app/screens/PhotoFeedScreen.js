@@ -16,6 +16,7 @@ import React, {
 import StatusBarBg from '../components/StatusBarBg';
 import ViewContainer from '../components/ViewContainer';
 import PhotoFeedSearchComponent from '../components/PhotoFeedSearchComponent';
+import ajaxHelpers from '../utils/ajaxHelpers';
 
 
 class PhotoFeedScreen extends Component {
@@ -33,14 +34,26 @@ class PhotoFeedScreen extends Component {
   }
 
   navigateToPhotoInfoScreen(photoData){
-    this.setState({
-      isLoading: 'true',
-    });
-    this.props.navigator.push({
-      goToScreen: 'PhotoInfoScreen',
-      sceneConfig: Navigator.SceneConfigs.HorizontalSwipeJump,
-      photoId: photoData.id,
-      photoUri: `https://farm${photoData.farm}.staticflickr.com/${photoData.server}/${photoData.id}_${photoData.secret}_z.jpg`,
+
+    let photoId = photoData.id;
+    ajaxHelpers.getPhotoInfo(photoId)
+    .then((response) => response.json())
+    .then((responseData) => {
+      console.log('returning ajaxxx earlier', responseData)
+
+      this.props.navigator.push({
+        goToScreen: 'PhotoInfoScreen',
+        sceneConfig: Navigator.SceneConfigs.HorizontalSwipeJump,
+        photoId: photoData.id,
+        photoUri: `https://farm${photoData.farm}.staticflickr.com/${photoData.server}/${photoData.id}_${photoData.secret}_z.jpg`,
+
+        title: responseData.photo.title._content,
+        realname: responseData.photo.owner.realname,
+        username: responseData.photo.owner.username,
+        description: responseData.photo.description._content,
+        lat: responseData.photo.location.latitude,
+        lon: responseData.photo.location.longitude,
+      });
     });
   }
 

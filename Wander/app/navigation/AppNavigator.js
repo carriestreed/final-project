@@ -65,6 +65,13 @@ class AppNavigator extends Component {
             {...globalNavigatorProps}
             photoId={route.photoId}
             photoUri={route.photoUri}
+
+            title={route.title}
+            realname={route.realname}
+            username={route.username}
+            description={route.description}
+            lat={route.lat}
+            lon={route.lon}
           />
         )
 
