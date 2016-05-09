@@ -15,7 +15,6 @@ import PhotoFeedScreen from '../screens/PhotoFeedScreen';
 import PhotoInfoScreen from '../screens/PhotoInfoScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 
-
 class AppNavigator extends Component {
 
   _renderScene(route, navigator){

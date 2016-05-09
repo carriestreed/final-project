@@ -20,7 +20,9 @@ class HomepageScreen extends Component {
         <HomepageSearchComponent
           navigator={this.props.navigator}
           />
-        <FeaturedComponent />
+        <FeaturedComponent
+          navigator={this.props.navigator}
+          />
       </View>
     )
   }

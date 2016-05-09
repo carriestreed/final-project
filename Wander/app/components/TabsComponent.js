@@ -57,7 +57,7 @@ class TabsComponent extends Component {
 
         <Icon.TabBarItemIOS
           selected={this.state.selectedTab === 'featured'}
-          title={'FEATURED'}
+          title={'TRENDING'}
           iconName="star"
           onPress={this.selectedFeatured.bind(this)}
           >

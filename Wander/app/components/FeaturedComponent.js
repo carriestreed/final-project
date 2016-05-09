@@ -4,42 +4,151 @@ import React, {
   Component,
   Text,
   StyleSheet,
-} from 'react-native'
+  Image,
+  View,
+  TouchableOpacity,
+  Navigator,
+} from 'react-native';
 
-
-const hpFeaturedData = [
-  {
-    id: 1,
-    url: "https://www.newscientist.com/blogs/shortsharpscience/assets_c/2011/06/00130493-thumb-600x400-128963.jpg",
-    title: "Salt Flats",
-    description: "Trippin screening phone calls parting your hair down the middle the Truman Show. Dolly the Sheep flip flops Fresh Prince of Bel-Air sideburns gangsta’s paradise, Air Jordans cargo pants Geo Metro incididunt Oakleys. Michael Jordan Spice Girls animated GIFs Sublime frosted tips gettin’ jiggy wit it. Choker necklace Nirvana laborum Kazaa Saved by the Bell. As I lay me down to sleep Roseanne Hush Puppies nylon windbreaker Tommy Hilfiger duis.",
-    author: "Eustace",
-    date: "April 9",
-    location: "Bolivia",
-    created_at: "2016-05-01T20:46:15.497Z",
-    updated_at: "2016-05-01T20:46:15.497Z"
-  }
-]
-
+import ajaxHelpers from '../utils/ajaxHelpers';
 
 class FeaturedComponent extends Component {
 
+  constructor(props){
+    super(props)
+    this.state = {
+      ajaxReturn: [],
+      countrySearch: '',
+    }
+  }
+
+  userPress1(){
+    this.setState({
+      countrySearch: 'indonesia'
+    })
+    this.handleAjaxCall()
+  }
+
+  userPress2(){
+    this.setState({
+      countrySearch: 'nikko'
+    })
+    this.handleAjaxCall()
+  }
+
+  userPress3(){
+    this.setState({
+      countrySearch: 'cape+town'
+    })
+    this.handleAjaxCall()
+  }
+
+  handleAjaxCall(){
+    console.log('searching for', this.state.countrySearch)
+    let userInput = this.state.countrySearch;
+    ajaxHelpers.callCountry(userInput)
+    .then((response) => response.json())
+    .then((responseData) => {
+      this.setState({
+        ajaxReturn: responseData
+      })
+      this.navigateToPhotoFeedScreen()
+    })
+    .done();
+  }
+
+  navigateToPhotoFeedScreen(){
+    console.log('navigatingggg', this.state.ajaxReturn)
+    this.setState({
+      isLoading: true,
+    });
+    this.props.navigator.push({
+      goToScreen: 'PhotoFeedScreen',
+      countrySearch: this.state.ajaxReturn,
+      sceneConfig: Navigator.SceneConfigs.FloatFromRight,
+    });
+  }
+
   render(){
     return(
-      <Text style={styles.temp}>
-        Pixar home skillet lorem Umbro shorts, Fargo hoodies ain’t no thang your mom. Cornrows eu Beanie Babies rollerblades Sugar Ray, Nickelodeon officia world wide web Ghost pottery scene. Veniam nisi Taco Bell chihuahua LA Gear cut-off jean shorts hoop earrings, turquoise sunt Hot Pockets laborum. Eiusmod bare midriffs yin yang zebra stripes.
-        Game Boy Color Savage Garden Ford Taurus Dolly the Sheep. I will be your father figure Snoop Dogg Umbro shorts Hot Pockets, aliqua personal computer beepers bowl cut Alta Vista accent braids. Seattle Supersonics VCR coral crib Street Fighter II inflatable furniture, Oasis Courtney Love turtlenecks valley girl Independence Day grunge. Taco Bell chihuahua wallet chains yo quiero Taco Bell Toyota Previa super soaker scrolling text.
-        Hot pink choker necklace dope Britpop cassette tape, in trippin’ your mom ut. Digital pets smells like teen spirit dial-up Sublime Seattle Supersonics, Encarta Green Day Hush Puppies Seinfeld my heart will go on. Julia Roberts Cory Matthews crimped hair Aerosmith. Cable modem vertically striped shirts rad biker shorts.
-        Roseanne New Kids on the Block dolor trainers. Lunchables Warheads Braveheart as I lay me down to sleep, yin yang scrolling text pop punk gangsta’s paradise animated GIFs. Millenials reprehenderit Seattle Supersonics parting your hair down the middle necklaces with your name on a grain of rice officia, Netscape Navigator Moby track jackets ullamco. Velit trippin’ playa Uncle Phil Giga Pets.
-      </Text>
+      <View>
+
+        <Text style={styles.featured}>
+          {`Featured Destinations`}
+        </Text>
+
+        <TouchableOpacity
+          onPress={this.userPress1.bind(this)}
+          >
+          <Image
+            style={styles.main}
+            source={require('../images/indonesia.jpg')}
+            >
+            <Text style={styles.text}>{`Indonesia`}</Text>
+          </Image>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={this.userPress2.bind(this)}
+          >
+          <Image
+            style={styles.main}
+            source={require('../images/nikko.jpg')}
+            >
+            <Text style={styles.text}>{`Japan`}</Text>
+          </Image>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={this.userPress3.bind(this)}
+          >
+          <Image
+            style={styles.main}
+            source={require('../images/capetown2.jpg')}
+            >
+            <Text style={styles.text}>{`South Africa`}</Text>
+          </Image>
+        </TouchableOpacity>
+
+      </View>
+
     )
   }
 }
 
 
 const styles=StyleSheet.create({
-  temp: {
+  main: {
     backgroundColor: 'transparent',
+    width: null,
+    height: 230,
+    resizeMode: 'cover',
+    marginTop: 10
+  },
+  featured: {
+    fontSize: 28,
+    fontFamily: 'NewsCycle-Bold',
+    marginTop: 25,
+    margin: 5,
+    marginBottom: -10,
+    color: 'rgba(255,255,255,.9)',
+    textShadowColor: 'rgba(0,0,0,.5)',
+    textShadowOffset: {width: -1, height: -1},
+    textShadowRadius: 1,
+  },
+  text: {
+    margin: 5,
+    marginRight: 10,
+    alignSelf: 'flex-end',
+    flexDirection: 'column',
+    fontFamily: 'NewsCycle-Bold',
+    fontSize: 25,
+    textShadowColor: 'rgba(0,0,0,.5)',
+    textShadowOffset: {width: 1, height: 1},
+    textShadowRadius: 5,
+    marginBottom: 100,
+    textAlign: 'center',
+    color: 'rgba(255,255,255,.9)',
   },
 });
 

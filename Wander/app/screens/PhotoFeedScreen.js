@@ -67,7 +67,6 @@ class PhotoFeedScreen extends Component {
               source={{uri:`https://farm${photoData.farm}.staticflickr.com/${photoData.server}/${photoData.id}_${photoData.secret}_z.jpg`}}
               />
             <Text style={styles.dataText}>
-              {`more features will go here`}
             </Text>
           </View>
         </TouchableWithoutFeedback>
@@ -99,10 +98,10 @@ const styles=StyleSheet.create({
     width: null,
     height: 600,
     resizeMode: 'cover',
-    marginBottom: 15,
+    marginBottom: 10,
   },
   dataText: {
-    marginBottom: 40,
+    marginBottom: 10,
     marginTop: -8,
     margin: 3,
   }
