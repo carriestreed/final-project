@@ -60,7 +60,6 @@ class LoginScreen extends Component {
     });
     this.props.navigator.push({
       goToScreen: 'TabsComponent',
-      sceneConfig: Navigator.SceneConfigs.FloatFromRight,
       username: this.state.username,
       password: this.state.password
     });
