@@ -19,7 +19,7 @@ const ajaxHelpers = {
   },
 
   register: function(user){
-    return fetch('http://localhost:3000/auth.json', {
+    return fetch('https://wander-backend.herokuapp.com/auth.json', {
       method:'POST',
       headers: {
         'Accept': 'application/json',
@@ -30,7 +30,7 @@ const ajaxHelpers = {
   },
 
   login: function(user) {
-    return fetch('http://localhost:3000/auth/sign_in', {
+    return fetch('https://wander-backend.herokuapp.com/auth/sign_in', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
