@@ -4,7 +4,7 @@ Wander, now for IOS.
 
 ### App overview:
 
-After building Wander in project-two for the web, I wanted to challenge myself with building the app specifically for a mobile device using React Native and user Authentication. 
+After building Wander in project-two for the web (https://github.com/carriestreed/project-two), I wanted to challenge myself with building the app specifically for a mobile device using React Native and user Authentication. 
 
 ##### Technologies used:
 - React Native
