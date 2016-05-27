@@ -1,6 +1,7 @@
 # Final Project
 
-Wander, now for IOS.
+#### Wander, now for IOS. 
+###### demo currently unavailable on the web, check out the screenshots <a href="http://www.slideshare.net/CarrieStreed/wander-for-ios" target="_blank">here</a>.
 
 ### App overview:
 
